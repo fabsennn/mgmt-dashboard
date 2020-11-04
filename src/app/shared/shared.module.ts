@@ -12,6 +12,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import { CardComponent } from './widgets/card/card.component';
 import { PieComponent } from './widgets/pie/pie.component';
 
+
 @NgModule({
   declarations: [
     HeaderComponent,
