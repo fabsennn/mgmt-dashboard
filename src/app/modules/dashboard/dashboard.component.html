@@ -1,5 +1,10 @@
 <div>
-    <app-widget-area [data]="bigChart"></app-widget-area>
+    <app-widget-area [data]="bigChart" fxFlex="65"></app-widget-area>
+
+  <mat-divider [vertical]="true"></mat-divider>
+
+    <app-widget-pie [data]="pieChart" fxFlex="35"></app-widget-pie>
+
 </div>
 
 <br>
@@ -66,9 +71,7 @@
         </div>
 
     </div>
-    <div fxFlex="40">
-        <app-widget-pie [data]="pieChart"></app-widget-pie>
-    </div>
+
 </div>
 
 
