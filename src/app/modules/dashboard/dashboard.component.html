@@ -38,11 +38,10 @@
     <div fxFlex="60">
         <div class="mat-elevation-z8">
             <table mat-table [dataSource]="dataSource">
-
-                <!-- Position Column -->
+                <!-- Date Column -->
                 <ng-container matColumnDef="position">
-                    <th mat-header-cell *matHeaderCellDef> No. </th>
-                    <td mat-cell *matCellDef="let element"> {{element.position}} </td>
+                    <th mat-header-cell *matHeaderCellDef> Datum </th>
+                    <td mat-cell *matCellDef="let element"> {{element.datum}} </td>
                 </ng-container>
 
                 <!-- Name Column -->
@@ -51,16 +50,16 @@
                     <td mat-cell *matCellDef="let element"> {{element.name}} </td>
                 </ng-container>
 
-                <!-- Weight Column -->
+                <!-- Gesprächstyp Column -->
                 <ng-container matColumnDef="weight">
-                    <th mat-header-cell *matHeaderCellDef> Weight </th>
-                    <td mat-cell *matCellDef="let element"> {{element.weight}} </td>
+                    <th mat-header-cell *matHeaderCellDef> Gesprächstyp </th>
+                    <td mat-cell *matCellDef="let element"> {{element.gespraechstyp}} </td>
                 </ng-container>
 
-                <!-- Symbol Column -->
+                <!-- Kundennummer Column -->
                 <ng-container matColumnDef="symbol">
-                    <th mat-header-cell *matHeaderCellDef> Symbol </th>
-                    <td mat-cell *matCellDef="let element"> {{element.symbol}} </td>
+                    <th mat-header-cell *matHeaderCellDef> Kundennummer</th>
+                    <td mat-cell *matCellDef="let element"> {{element.kundennummer}} </td>
                 </ng-container>
 
                 <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
