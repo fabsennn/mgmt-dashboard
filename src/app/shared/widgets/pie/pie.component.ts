@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import HC_exporting from 'highcharts/modules/exporting';
+import {getOptions} from 'highcharts';
 
 @Component({
   selector: 'app-widget-pie',
@@ -22,7 +23,7 @@ export class PieComponent implements OnInit {
         plotBackgroundColor: null,
         plotBorderWidth: null,
         plotShadow: false,
-        type: 'pie'
+        type: 'pie',
       },
       title: {
         text: 'Kundenkontakte'
@@ -34,6 +35,7 @@ export class PieComponent implements OnInit {
         pie: {
           allowPointSelect: true,
           cursor: 'pointer',
+          colors: ['#31fc03', '#fca103', '#d7fc03', '#fc0303'],
           dataLabels: {
             enabled: true,
             format: '<b>{point.name}</b>: {point.percentage:.1f} %'
