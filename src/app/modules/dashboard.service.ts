@@ -47,4 +47,15 @@ export class DashboardService {
       y: 4
     }];
   }
+  donut() {
+    return [{
+      name: 'offene Gespräche',
+      y: 30,
+      sliced: true,
+      selected: true
+    }, {
+      name: 'geführte Gespräche',
+      y: 30
+    }];
+  }
 }
