@@ -1,4 +1,5 @@
 import {Component, EventEmitter, OnInit, Output} from '@angular/core';
+import { DashboardService } from '../../../modules/dashboard.service';
 
 @Component({
   selector: 'app-news-card',
@@ -6,12 +7,17 @@ import {Component, EventEmitter, OnInit, Output} from '@angular/core';
   styleUrls: ['./news-card.component.scss']
 })
 export class NewsCardComponent implements OnInit {
-
   @Output() reloadNewsfeed: EventEmitter<any> = new EventEmitter();
 
-  constructor() { }
+  articles;
+
+  constructor(private dashboardService: DashboardService) { }
 
   ngOnInit() {
+    this.dashboardService.getNews().subscribe((data) => {
+      console.log(data);
+      this.articles = data['articles'];
+    });
   }
 
 
