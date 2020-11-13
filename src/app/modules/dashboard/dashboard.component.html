@@ -1,8 +1,10 @@
 <div>
 
-    <app-news-card fxFlex="50" class="mat-elevation-z8" style="padding: 20px"></app-news-card>
-    <mat-divider [vertical]="true" style="padding: 10px"></mat-divider>
-    <app-todo-table class="mat-elevation-z8" style="padding: 20px"></app-todo-table>
+  <app-news-card fxFlex="50" class="mat-elevation-z8" style="padding: 20px"></app-news-card>
+
+  <mat-divider [vertical]="true" style="padding: 10px"></mat-divider>
+
+  <app-todo-table class="mat-elevation-z8" style="padding: 20px"></app-todo-table>
 
 </div>
 
@@ -12,28 +14,7 @@
 
 <br>
 
-<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px" class="stats-cards">
-    <mat-card fxFlex="25">
-        <app-widget-card label="test" total="12k" percentage="50" [data]="cards"></app-widget-card>
-    </mat-card>
-    <mat-card fxFlex="25">
-        <app-widget-card label="Users retention" total="10k" percentage="40" [data]="cards"></app-widget-card>
-    </mat-card>
-    <mat-card fxFlex="25">
-        <app-widget-card label="Users engagement" total="8k" percentage="30" [data]="cards"></app-widget-card>
-    </mat-card>
-    <mat-card fxFlex="25">
-        <app-widget-card label="Referral" total="6k" percentage="20" [data]="cards"></app-widget-card>
-    </mat-card>
-</div>
-
-<br>
-
-<mat-divider></mat-divider>
-
-<br>
-
-<div fxLayout="row" fxLayoutAlign="space-between center" fxLayoutGap="20px">
+<div>
     <div fxFlex="60">
         <div class="mat-elevation-z8">
             <table mat-table [dataSource]="dataSource">
@@ -67,22 +48,14 @@
 
             <mat-paginator [pageSizeOptions]="[5, 10, 20]"></mat-paginator>
         </div>
-
     </div>
 
+  <mat-divider [vertical]="true" style="padding: 10px"></mat-divider>
 
-
-
-    <div fxFlex="40">
-      <app-widget-donut></app-widget-donut>
-    </div>
+  <div fxFlex="40" class="mat-elevation-z8" >
+    <app-widget-donut></app-widget-donut>
   </div>
+</div>
 
-
-
-
-
-
-<br>
 <br>
 <br>
