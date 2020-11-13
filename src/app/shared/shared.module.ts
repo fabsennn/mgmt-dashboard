@@ -20,6 +20,7 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import { CardComponent } from './widgets/card/card.component';
 import { PieComponent } from './widgets/pie/pie.component';
 import { NewsCardComponent } from './widgets/news-card/news-card.component';
+import { TodoTableComponent } from './widgets/todo-table/todo-table.component';
 
 
 @NgModule({
@@ -30,7 +31,8 @@ import { NewsCardComponent } from './widgets/news-card/news-card.component';
     AreaComponent,
     CardComponent,
     PieComponent,
-    NewsCardComponent
+    NewsCardComponent,
+    TodoTableComponent
   ],
     imports: [
         CommonModule,
@@ -53,7 +55,8 @@ import { NewsCardComponent } from './widgets/news-card/news-card.component';
     AreaComponent,
     CardComponent,
     PieComponent,
-    NewsCardComponent
+    NewsCardComponent,
+    TodoTableComponent
   ]
 })
 export class SharedModule { }
