@@ -19,6 +19,7 @@ import { AreaComponent } from './widgets/area/area.component';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { CardComponent } from './widgets/card/card.component';
 import { PieComponent } from './widgets/pie/pie.component';
+import { DonutComponent } from './widgets/donut/donut.component';
 import { NewsCardComponent } from './widgets/news-card/news-card.component';
 import { TodoTableComponent } from './widgets/todo-table/todo-table.component';
 
@@ -31,6 +32,7 @@ import { TodoTableComponent } from './widgets/todo-table/todo-table.component';
     AreaComponent,
     CardComponent,
     PieComponent,
+    DonutComponent,
     NewsCardComponent,
     TodoTableComponent
   ],
@@ -56,7 +58,8 @@ import { TodoTableComponent } from './widgets/todo-table/todo-table.component';
     CardComponent,
     PieComponent,
     NewsCardComponent,
-    TodoTableComponent
+    TodoTableComponent,
+    DonutComponent
   ]
 })
 export class SharedModule { }
