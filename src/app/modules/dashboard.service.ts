@@ -1,6 +1,5 @@
 import { Injectable } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
-import {resolve} from 'url';
 import {environment} from '../../environments/environment';
 
 
@@ -40,7 +39,7 @@ export class DashboardService {
   }
 
   public getEvents() {
-    return this.request('GET', `${environment.serverUrl}/event`);
+    return this.httpClient.get( `${environment.serverUrl}`);
   }
 
 }
