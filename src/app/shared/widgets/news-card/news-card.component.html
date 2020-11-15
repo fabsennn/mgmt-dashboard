@@ -22,13 +22,14 @@
       <mat-icon>keyboard_arrow_right</mat-icon>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque lorem quam, placerat vitae metus eget, posuere tempor risus. Nunc dignissim lacus ut ipsum accumsan, et tincidunt justo congue. Morbi porta commodo felis, sit amet dignissim odio sodales sit amet. Nam sed purus est. Ut tellus felis, dignissim auctor facilisis non, accumsan nec nibh. Vivamus eget nibh fermentum, consequat ex ac, rutrum diam. Sed euismod lobortis metus, sodales accumsan quam facilisis vestibulum. Aenean in mollis lacus, sit amet ornare justo. Etiam dictum lectus eget sem eleifend, et maximus odio vulputate. Ut venenatis tristique odio ut interdum. Morbi vestibulum felis quam. Nunc at turpis vel diam ullamcorper accumsan quis sed nisl. Curabitur fermentum ipsum vitae mauris sodales dapibus. Sed rutrum ac sapien nec pulvinar. Suspendisse euismod enim id ultrices lacinia. Sed ut enim quam.
     </div>-->
+
     <div *ngFor="let article of articles">
       <h2>{{article.title}}</h2>
 
-      <p>
-        {{article.description}}
-      </p>
-      <a href="{{article.url}}">Read full article</a>
+        <p>
+          {{article.description}}
+        </p>
+        <a href="{{article.url}}">Read full article</a>
     </div>
   </div>
 
@@ -56,5 +57,10 @@
     </mat-menu>
 
   </div>
+
+
+
+
+
 
 </mat-card-actions>
