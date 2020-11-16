@@ -14,7 +14,7 @@ export class NewsCardComponent implements OnInit {
   constructor(private dashboardService: DashboardService) { }
 
   ngOnInit() {
-    this.dashboardService.getEvents().subscribe((data) => {
+    this.dashboardService.getNews().subscribe((data) => {
       console.log(data);
       this.articles = data['articles'];
     });
