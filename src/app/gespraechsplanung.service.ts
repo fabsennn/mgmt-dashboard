@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class GespraechsplanungService {
-  private baseUrl = 'http://localhost:8082/api/gespraechsplanung';
+  private baseUrl = 'http://localhost:8080/gespraechsplanung';
 
   constructor(private http: HttpClient) { }
 
