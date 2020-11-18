@@ -33,7 +33,7 @@ export class DashboardService {
   }
 
   public getNews() {
-    return this.httpClient.get(`https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${this.API_KEY}`);
+    return this.httpClient.get(`http://localhost:8080/gespraeche`, {responseType: 'text'});
   }
 
   public getEvents() {
