@@ -39,7 +39,8 @@ export class GespraechsTableComponent implements OnInit {
 
     this.gespraechstableService.getGespraeche().subscribe((data) => {
       console.log(data);
-      this.dataSource.data = data['gespraecheArray'];
+      // @ts-ignore
+      this.dataSource = data;
     });
 
     /*this.dashboardService.getGespraech(10012369).subscribe((data) => {

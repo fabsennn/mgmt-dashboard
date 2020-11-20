@@ -15,5 +15,9 @@ export class GespraechsTableService {
     return this.httpClient.get(`http://localhost:8080/gespraeche`);
   }
 
+  public getGespraecheBerater(beraterID) {
+    return this.httpClient.get(`http://localhost:8080/gespraeche/berater/${beraterID}`);
+  }
+
 
 }
