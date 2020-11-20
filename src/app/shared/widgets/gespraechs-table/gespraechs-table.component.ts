@@ -1,21 +1,34 @@
 import {Component, Input, OnInit} from '@angular/core';
-import { GespraechsplanungService } from '../../../gespraechsplanung.service';
 import { MatTableDataSource } from '@angular/material';
-import { Gespraechsplanung } from '../../../gespraechsplanung';
-import {DashboardService} from '../../../modules/dashboard.service';
+import { DashboardService } from '../../../modules/dashboard.service';
+import {GespraechsTableService} from './Service/gespraechs-table.service';
+
+
+
+
+export class Gespraechsplanung {
+  id: number;
+  kundennummer: number;
+  kategorie: string;
+  thema: string;
+  datum: string;
+  zeitraum: string;
+  berater: string;
+  naechsteFaelligkeit: string;
+  letzterKontakt: string;
+}
+
 
 @Component({
   selector: 'app-gespraechs-table',
   templateUrl: './gespraechs-table.component.html',
   styleUrls: ['./gespraechs-table.component.scss']
 })
-
-
 export class GespraechsTableComponent implements OnInit {
 
   @Input() gespraech: Gespraechsplanung;
 
-  constructor(private dashboardService: DashboardService) { }
+  constructor(private gespraechstableService: GespraechsTableService) { }
 
   dataSource = new MatTableDataSource<Gespraechsplanung>();
   displayedColumns: string[] = ['Kundennummer', 'Kategorie', 'Thema', 'Nächste Fälligkeit'];
@@ -24,7 +37,7 @@ export class GespraechsTableComponent implements OnInit {
 
   ngOnInit() {
 
-    this.dashboardService.getGespraeche().subscribe((data) => {
+    this.gespraechstableService.getGespraeche().subscribe((data) => {
       console.log(data);
       this.dataSource.data = data['gespraecheArray'];
     });
