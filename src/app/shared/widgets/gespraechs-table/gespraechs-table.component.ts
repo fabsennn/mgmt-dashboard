@@ -24,14 +24,14 @@ export class GespraechsTableComponent implements OnInit {
 
   ngOnInit() {
 
-    /*this.dashboardService.getGespraeche().subscribe((data) => {
+    this.dashboardService.getGespraeche().subscribe((data) => {
+      console.log(data);
+      this.dataSource.data = data['gespraecheArray'];
+    });
+
+    /*this.dashboardService.getGespraech(10012369).subscribe((data) => {
       console.log(data);
       this.gespraecheArray = data['gespraecheArray'];
     });*/
-
-    this.dashboardService.getGespraech(10012369).subscribe((data) => {
-      console.log(data);
-      this.gespraecheArray = data['gespraecheArray'];
-    });
   }
 }

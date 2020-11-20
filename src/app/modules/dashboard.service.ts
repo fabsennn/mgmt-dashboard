@@ -38,7 +38,7 @@ export class DashboardService {
   }
 
   public getGespraeche() {
-    return this.httpClient.get(`http://localhost:8080/gespraeche`/*, {responseType: 'text'}*/);
+    return this.httpClient.get(`http://localhost:8080/gespraeche`);
   }
 
   public getGespraech(id) {
