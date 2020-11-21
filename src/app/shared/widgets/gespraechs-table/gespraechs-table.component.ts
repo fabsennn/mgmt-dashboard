@@ -37,7 +37,7 @@ export class GespraechsTableComponent implements OnInit {
 
   ngOnInit() {
 
-    this.gespraechstableService.getGespraeche().subscribe((data) => {
+    this.gespraechstableService.getGespraecheBerater('88').subscribe((data) => {
       console.log(data);
       // @ts-ignore
       this.dataSource = data;
