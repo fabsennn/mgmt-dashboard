@@ -13,6 +13,7 @@ import { MatTableDataSource, MatPaginator } from '@angular/material';
 export class DashboardComponent implements OnInit {
 
   donut = [];
+  drilldown = [];
 
 
   @ViewChild(MatPaginator, { static: true }) paginator: MatPaginator;
@@ -21,5 +22,6 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
     this.donut = this.dashboardService.donut();
+    this.drilldown = this.dashboardService.drilldown();
   }
 }

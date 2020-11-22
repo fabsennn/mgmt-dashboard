@@ -31,6 +31,17 @@ export class DashboardService {
       y: 30
     }];
   }
+  drilldown(){
+    return [{
+      name: 'offene Gespräche',
+      y: 30,
+      sliced: true,
+      selected: true
+    }, {
+      name: 'geführte Gespräche',
+      y: 30
+    }];
+  }
 
   public getNews() {
     return this.httpClient.get(`https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=${this.API_KEY}`);
