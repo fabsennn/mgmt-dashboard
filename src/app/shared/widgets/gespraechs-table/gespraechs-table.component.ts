@@ -1,10 +1,7 @@
-import {Component, Input, OnInit} from '@angular/core';
-import { MatTableDataSource } from '@angular/material';
-import { DashboardService } from '../../../modules/dashboard.service';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
+import {MatPaginator, MatTableDataSource, PageEvent} from '@angular/material';
 import {GespraechsTableService} from './Service/gespraechs-table.service';
-
-
-
+import {MatSort} from '@angular/material/sort';
 
 export class Gespraechsplanung {
   id: number;
@@ -19,6 +16,8 @@ export class Gespraechsplanung {
 }
 
 
+
+
 @Component({
   selector: 'app-gespraechs-table',
   templateUrl: './gespraechs-table.component.html',
@@ -26,26 +25,51 @@ export class Gespraechsplanung {
 })
 export class GespraechsTableComponent implements OnInit {
 
+  public array: any;
+  public displayedColumns = ['Kundennummer', 'Kategorie', 'Thema', 'Nächste Fälligkeit'];
+  // tslint:disable-next-line:ban-types
+  dataSource: any = new MatTableDataSource();
+  public pageSize = 5;
+  public currentPage = 0;
+  public totalSize = 0;
+
+  // @ts-ignore
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+  // @ts-ignore
+  @ViewChild(MatSort) sort: MatSort;
+
   @Input() gespraech: Gespraechsplanung;
+  pageEvent: PageEvent;
 
   constructor(private gespraechstableService: GespraechsTableService) { }
 
-  dataSource = new MatTableDataSource<Gespraechsplanung>();
-  displayedColumns: string[] = ['Kundennummer', 'Kategorie', 'Thema', 'Nächste Fälligkeit'];
-
-  gespraecheArray;
-
   ngOnInit() {
+    this.getArray();
+    this.dataSource.sort = this.sort;
+    this.dataSource.paginator = this.paginator;
+  }
 
-    this.gespraechstableService.getGespraecheBerater('88').subscribe((data) => {
-      console.log(data);
-      // @ts-ignore
-      this.dataSource = data;
-    });
+  public handlePage(e: any) {
+    this.currentPage = e.pageIndex;
+    this.pageSize = e.pageSize;
+    this.iterator();
+  }
 
-    /*this.dashboardService.getGespraech(10012369).subscribe((data) => {
-      console.log(data);
-      this.gespraecheArray = data['gespraecheArray'];
-    });*/
+  private getArray() {
+    this.gespraechstableService.getPlanGespraecheBerater('88')
+      .subscribe((data) => {
+        this.dataSource = data;
+        this.dataSource.paginator = this.paginator;
+        this.array = data;
+        this.totalSize = this.array.length;
+        this.iterator();
+      });
+  }
+
+  private iterator() {
+    const end = (this.currentPage + 1) * this.pageSize;
+    const start = this.currentPage * this.pageSize;
+    const part = this.array.slice(start, end);
+    this.dataSource = part;
   }
 }

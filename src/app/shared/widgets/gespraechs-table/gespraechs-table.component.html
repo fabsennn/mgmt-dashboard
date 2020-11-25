@@ -1,23 +1,26 @@
+<div class="mat-elevation-z8" style="padding: 5px">
 
-  <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+  <h2> <mat-icon>phone</mat-icon> Ausstehende Gespräche </h2>
+
+  <table mat-table [dataSource]="dataSource" matSort >
 
     <ng-container matColumnDef="Kundennummer">
-      <th mat-header-cell *matHeaderCellDef> Kundennummer </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Kundennummer </th>
       <td mat-cell *matCellDef="let element"> {{element.kundennummer}} </td>
     </ng-container>
 
     <ng-container matColumnDef="Kategorie">
-      <th mat-header-cell *matHeaderCellDef> Kategorie </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Kategorie </th>
       <td mat-cell *matCellDef="let element"> {{element.kategorie}} </td>
     </ng-container>
 
     <ng-container matColumnDef="Thema">
-      <th mat-header-cell *matHeaderCellDef> Thema </th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Thema </th>
       <td mat-cell *matCellDef="let element"> {{element.thema}} </td>
     </ng-container>
 
     <ng-container matColumnDef="Nächste Fälligkeit">
-      <th mat-header-cell *matHeaderCellDef> Nächste Fälligkeit</th>
+      <th mat-header-cell *matHeaderCellDef mat-sort-header> Nächste Fälligkeit</th>
       <td mat-cell *matCellDef="let element"> {{element.naechsteFaelligkeit}} </td>
     </ng-container>
 
@@ -25,5 +28,7 @@
     <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
   </table>
 
-  <mat-paginator [pageSizeOptions]="[5, 10, 20]"></mat-paginator>
-
+  <mat-paginator #paginator [pageSize]="pageSize" [pageSizeOptions]="[5, 10, 20]" [showFirstLastButtons]="true" [length]="totalSize"
+                 [pageIndex]="currentPage" (page)="pageEvent = handlePage($event)">
+  </mat-paginator>
+</div>
