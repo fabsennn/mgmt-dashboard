@@ -28,8 +28,8 @@
 
 <mat-list #list>
 
-  <mat-list-item *ngFor="let todo of todos;let indexOfelement = index;">
-    <h2 matLine>Aufgabe {{indexOfelement}}</h2>
+  <mat-list-item *ngFor="let todo of todos; let indexOfelement = index; ">
+    <h2 matLine>Aufgabe {{ indexOfelement + 1 }}</h2>
     <p matLine>Fällig: {{todo.naechsteFaelligkeit}}</p>
     <p matLine></p>
     <p><mat-icon style="padding: 10px">phone</mat-icon></p>
