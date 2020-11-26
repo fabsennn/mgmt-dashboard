@@ -23,6 +23,8 @@ import { DonutComponent } from './widgets/donut/donut.component';
 import { NewsCardComponent } from './widgets/news-card/news-card.component';
 import { TodoTableComponent } from './widgets/todo-table/todo-table.component';
 import { GespraechsTableComponent } from './widgets/gespraechs-table/gespraechs-table.component';
+import {KundeninfoComponent} from './widgets/kundeninfo/kundeninfo.component';
+import {MatInputModule} from '@angular/material/input';
 
 
 @NgModule({
@@ -36,7 +38,8 @@ import { GespraechsTableComponent } from './widgets/gespraechs-table/gespraechs-
     DonutComponent,
     NewsCardComponent,
     TodoTableComponent,
-    GespraechsTableComponent
+    GespraechsTableComponent,
+    KundeninfoComponent
   ],
   imports: [
     CommonModule,
@@ -52,7 +55,8 @@ import { GespraechsTableComponent } from './widgets/gespraechs-table/gespraechs-
     MatCardModule,
     MatProgressSpinnerModule,
     MatTableModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatInputModule
   ],
   exports: [
     HeaderComponent,
@@ -64,7 +68,8 @@ import { GespraechsTableComponent } from './widgets/gespraechs-table/gespraechs-
     NewsCardComponent,
     TodoTableComponent,
     DonutComponent,
-    GespraechsTableComponent
+    GespraechsTableComponent,
+    KundeninfoComponent
   ]
 })
 export class SharedModule { }

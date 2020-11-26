@@ -15,9 +15,6 @@ export class Gespraechsplanung {
   letzterKontakt: string;
 }
 
-
-
-
 @Component({
   selector: 'app-gespraechs-table',
   templateUrl: './gespraechs-table.component.html',
