@@ -1,9 +1,10 @@
-import {Component, Input, OnInit} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {TodoTableService} from './Service/todo-table.service';
 import * as Highcharts from 'highcharts';
 import HC_exporting from 'highcharts/modules/exporting';
-import {MatTableDataSource} from '@angular/material';
+import {MatPaginator, MatTableDataSource, PageEvent} from '@angular/material';
 import {Gespraechsplanung} from '../gespraechs-table/gespraechs-table.component';
+import {MatSort} from '@angular/material/sort';
 
 interface Todo {
   kundennummer: number;
@@ -18,6 +19,15 @@ interface Todo {
 export class TodoTableComponent implements OnInit {
 
   Highcharts = Highcharts;
+  // tslint:disable-next-line:ban-types
+  public pageSize = 5;
+  public currentPage = 0;
+  public totalSize = 0;
+
+  // @ts-ignore
+  @ViewChild(MatPaginator) paginator: MatPaginator;
+
+  pageEvent: PageEvent;
 
   @Input() todo: Todo;
 
