@@ -25,6 +25,16 @@ export class KundeninfoComponent implements OnInit {
   constructor(private kundeninfoService: KundeninfoService ) { }
 
   ngOnInit() {
+    this.getArray();
+    this.dataSource.sort = this.sort;
+  }
+
+  private getArray() {
+    this.kundeninfoService.getKundeninfoKunde('1')
+      .subscribe((data) => {
+        this.dataSource = data;
+        this.array = data;
+      });
   }
 
 }
