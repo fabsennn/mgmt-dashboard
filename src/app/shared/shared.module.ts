@@ -16,13 +16,15 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { AreaComponent } from './widgets/area/area.component';
-import { HighchartsChartModule } from 'highcharts-angular';
+import { BubblePotentialComponent } from './widgets/bubble-potential/bubble-potential.component';
 import { CardComponent } from './widgets/card/card.component';
 import { PieComponent } from './widgets/pie/pie.component';
 import { DonutComponent } from './widgets/donut/donut.component';
 import { NewsCardComponent } from './widgets/news-card/news-card.component';
 import { TodoTableComponent } from './widgets/todo-table/todo-table.component';
 import { GespraechsTableComponent } from './widgets/gespraechs-table/gespraechs-table.component';
+
+import { HighchartsChartModule } from 'highcharts-angular';
 
 
 @NgModule({
@@ -36,7 +38,8 @@ import { GespraechsTableComponent } from './widgets/gespraechs-table/gespraechs-
     DonutComponent,
     NewsCardComponent,
     TodoTableComponent,
-    GespraechsTableComponent
+    GespraechsTableComponent,
+    BubblePotentialComponent
   ],
   imports: [
     CommonModule,
@@ -64,7 +67,8 @@ import { GespraechsTableComponent } from './widgets/gespraechs-table/gespraechs-
     NewsCardComponent,
     TodoTableComponent,
     DonutComponent,
-    GespraechsTableComponent
+    GespraechsTableComponent,
+    BubblePotentialComponent
   ]
 })
 export class SharedModule { }
