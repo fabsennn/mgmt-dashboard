@@ -1,6 +1,7 @@
 import {Component, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator, MatTableDataSource, PageEvent} from '@angular/material';
 import {MatSort} from '@angular/material/sort';
+import {KundeninfoService} from './Service/kundeninfo.service';
 
 export class Kundeninfo {
   krankenvers: number;
@@ -21,7 +22,7 @@ export class KundeninfoComponent implements OnInit {
   // @ts-ignore
   @ViewChild(MatSort) sort: MatSort;
 
-  constructor() { }
+  constructor(private kundeninfoService: KundeninfoService ) { }
 
   ngOnInit() {
   }
