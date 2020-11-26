@@ -23,6 +23,8 @@ import { DonutComponent } from './widgets/donut/donut.component';
 import { NewsCardComponent } from './widgets/news-card/news-card.component';
 import { TodoTableComponent } from './widgets/todo-table/todo-table.component';
 import { GespraechsTableComponent } from './widgets/gespraechs-table/gespraechs-table.component';
+import { ErfolgsmessungBarComponent } from './widgets/erfolgsmessung-bar/erfolgsmessung-bar.component';
+import { KundenRangComponent } from './widgets/kunden-rang/kunden-rang.component';
 
 
 @NgModule({
