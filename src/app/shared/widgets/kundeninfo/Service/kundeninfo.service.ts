@@ -9,6 +9,6 @@ export class KundeninfoService {
   constructor(private httpClient: HttpClient) { }
 
   public getKundeninfoKunde(kundennummer) { // evtl. statt Kundennummer Verbundführer
-    return this.httpClient.get(`http://localhost:8080/kunden/${kundennummer}`); // link noch placeholder
+    return this.httpClient.get(`http://localhost:8080/kundenliste_pk/kunde/${kundennummer}`); // link noch placeholder
   }
 }

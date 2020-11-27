@@ -1,9 +1,9 @@
-import {Component, OnInit, ViewChild} from '@angular/core';
+import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator, MatTableDataSource, PageEvent} from '@angular/material';
 import {MatSort} from '@angular/material/sort';
 import {KundeninfoService} from './Service/kundeninfo.service';
 
-export class Kundeninfo {
+interface Kundeninfo {
   krankenvers: number;
   unfallvers: number;
   sachvers: number;
@@ -15,9 +15,11 @@ export class Kundeninfo {
   styleUrls: ['./kundeninfo.component.scss']
 })
 export class KundeninfoComponent implements OnInit {
-  public array: any;
+
   public displayedColumns = ['Krankenversicherung', 'Unfallversicherung', 'Sachversicherung'];
   dataSource: any = new MatTableDataSource();
+  @Input() kundeninfo: Kundeninfo;
+  kundeninfos: Object;
 
   // @ts-ignore
   @ViewChild(MatSort) sort: MatSort;
@@ -25,16 +27,13 @@ export class KundeninfoComponent implements OnInit {
   constructor(private kundeninfoService: KundeninfoService ) { }
 
   ngOnInit() {
-    this.getArray();
-    this.dataSource.sort = this.sort;
+    this.kundeninfoService.getKundeninfoKunde(8).subscribe((data) => {
+      console.log(data);
+      this.kundeninfos = data;
+      this.dataSource = data;
+    });
   }
 
-  private getArray() {
-    this.kundeninfoService.getKundeninfoKunde('1')
-      .subscribe((data) => {
-        this.dataSource = data;
-        this.array = data;
-      });
-  }
+
 
 }
