@@ -1,12 +1,14 @@
 <div>
 
   <h2> <mat-icon>person_search</mat-icon> Kundeninfo </h2>
-  <form class="example-form">
-    <mat-form-field class="example-full-width">
-      <mat-label>Kundennummer / Verbandfuehrer</mat-label>
-      <input type="number" matInput placeholder="123456">
-    </mat-form-field>
-    <button mat-raised-button color="primary">Submit</button>
+  <form [formGroup]="checkoutForm" (ngSubmit)="onSubmit(checkoutForm.value)" class="example-form">
+    <div class="form-group">
+      <mat-form-field class="example-full-width">
+        <mat-label>Kundennummer / Verbandfuehrer</mat-label>
+        <input type="number" matInput placeholder="123456" formControlName="kundennr">
+      </mat-form-field>
+    </div>
+    <button mat-raised-button color="primary" type="submit">Submit</button>
   </form>
 </div>
 
