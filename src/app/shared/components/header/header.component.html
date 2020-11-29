@@ -1,26 +1,26 @@
-<mat-toolbar color='primary'>
+<mat-toolbar style="background-color: darkblue">
     <mat-toolbar-row>
         <button mat-icon-button (click)="toggleSideBar()">
-            <mat-icon>menu</mat-icon>
+            <mat-icon style="color: white">menu</mat-icon>
         </button>
 
-        <span> M.I.T. GmbH </span>
+        <span style="color: white"> MIT </span>
 
         <div fxFlex fxLayout="row" fxLayoutAlign="flex-end">
             <ul fxLayout="row" fxLayoutGap="20px">
                 <li>
                     <button mat-icon-button>
-                        <mat-icon>settings</mat-icon>
+                        <mat-icon style="color: white">settings</mat-icon>
                     </button>
                 </li>
                 <li>
                     <button mat-icon-button>
-                        <mat-icon>help_outline</mat-icon>
+                        <mat-icon style="color: white">help_outline</mat-icon>
                     </button>
                 </li>
                 <li>
                     <button mat-button [matMenuTriggerFor]="menu">
-                        <mat-icon>person_outline</mat-icon>
+                        <mat-icon style="color: white">person_outline</mat-icon>
                     </button>
                     <mat-menu #menu="matMenu">
                         <button mat-menu-item>

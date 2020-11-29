@@ -1,32 +1,29 @@
 <mat-nav-list>
     <div class="profile-card">
         <div class="header">
-            <h2>Management Dashboard</h2>
-            <h4>M.I.T.</h4>
+            <h2>Dashboard</h2>
+          <mat-divider style="transform: translate(0px, -10px);"></mat-divider>
+            <h4 style="color: grey">Username</h4>
         </div>
-        <img src="https://res.cloudinary.com/chocobrain/image/upload/c_scale,dpr_auto,f_auto,q_auto,w_50/v1582899364/bBhTK9ap/Platzhalter%20Person" alt="Soufiane FADIL">
+        <img src="http://media.w-h.se/2015/11/personalwho.jpg" alt="Profilbild">
     </div>
 
     <mat-divider></mat-divider>
 
     <h2 matSubheader>Seiten</h2>
 
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/">Dashboard</a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/posts">Geschäftsjahr</a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/articles">Artikel</a>
 
-    <mat-divider></mat-divider>
-
-    <h2 matSubheader>Tools</h2>
-
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="/">
+      <mat-icon>assessment</mat-icon>Dashboard</a>
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
-        <mat-icon>import_contacts</mat-icon>
-        Kontakte
-    </a>
-
+      <mat-icon>import_contacts</mat-icon>Kontakte</a>
     <a mat-list-item routerLinkActive="list-item-active" routerLink="/contacts">
-        <mat-icon>contact_phone</mat-icon>
-        Anrufe
-    </a>
+    <mat-icon>contact_phone</mat-icon>Anrufe</a>
+
+    <mat-divider style="transform: translate(0px, 15px);"></mat-divider>
+
+    <!--<h2 matSubheader>Tools</h2>-->
+
+
 
 </mat-nav-list>
