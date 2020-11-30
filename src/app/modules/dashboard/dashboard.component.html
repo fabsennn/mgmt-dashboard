@@ -28,12 +28,6 @@
   </div>
 </div>
 
-
-<div>
-  <app-kundeninfo fxFlex="50" class="mat-elevation-z8" style="padding: 20px"></app-kundeninfo>
-</div><br>
-
-
 <br>
 
 <mat-divider></mat-divider>
@@ -41,9 +35,16 @@
 <br>
 
 <div>
-  <div fxFlex="60" class="mat-elevation-z8">
+  <div fxFlex="100" class="mat-elevation-z8" style="padding: 20px">
+    <app-kundeninfo ></app-kundeninfo>
+  </div>
+  <mat-divider [vertical]="true" style="padding: 10px"></mat-divider>
+  <div fxFlex="50" class="mat-elevation-z8">
     <app-bubble-potential></app-bubble-potential>
   </div>
+
+
 </div>
+
 <br>
 <br>
