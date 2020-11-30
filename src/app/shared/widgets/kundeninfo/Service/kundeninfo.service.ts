@@ -10,6 +10,6 @@ export class KundeninfoService {
 
   public getKundeninfoKunde(kundennummer) {
     console.log(kundennummer);
-    return this.httpClient.get(`http://localhost:8080/kundenliste_pk/kunde/${kundennummer.kundennr}`); // link noch placeholder
+    return this.httpClient.get(`http://localhost:8080/kundenliste_pk/kunde/${kundennummer.kundennr}`);
   }
 }
