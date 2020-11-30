@@ -1,7 +1,7 @@
 import {Component, Input, OnInit, ViewChild} from '@angular/core';
-import {MatPaginator, MatTableDataSource, PageEvent} from '@angular/material';
+import {MatPaginator, MatTableDataSource, MatSort, PageEvent} from '@angular/material';
 import {GespraechsTableService} from './Service/gespraechs-table.service';
-import {MatSort} from '@angular/material/sort';
+
 
 export class Gespraechsplanung {
   id: number;
@@ -26,7 +26,7 @@ export class Gespraechsplanung {
 export class GespraechsTableComponent implements OnInit {
 
   public array: any;
-  public displayedColumns = ['Kundennummer', 'Kategorie', 'Thema', 'Nächste Fälligkeit'];
+  public displayedColumns = ['Kundennummer', 'Kategorie', 'Thema', 'Nächste Fälligkeit', 'actions'];
   // tslint:disable-next-line:ban-types
   dataSource: any = new MatTableDataSource();
   public pageSize = 5;
