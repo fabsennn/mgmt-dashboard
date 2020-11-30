@@ -1,8 +1,18 @@
 import { Component, OnInit, Input } from '@angular/core';
 import * as Highcharts from 'highcharts';
+import { BubblePotentialService } from './Service/bubble-potential.service';
 import HC_exporting from 'highcharts/modules/exporting';
 import HC_more from 'highcharts/highcharts-more';
+import {MatTableDataSource} from '@angular/material/table';
 HC_more(Highcharts);
+
+export class KundenlistePkPotenzial {
+  verbundfuehrer: number;
+  berater: string;
+  wprang: number;
+  bsrang: number;
+  lvrang: number;
+}
 
 @Component({
   selector: 'app-bubble-potential',
@@ -10,12 +20,19 @@ HC_more(Highcharts);
   styleUrls: ['./bubble-potential.component.scss']
 })
 export class BubblePotentialComponent implements OnInit {
+  public array: any;
+  dataSource: any = new MatTableDataSource();
   chartOptions = {};
-  @Input() data: any [];
+  @Input() data: KundenlistePkPotenzial;
   Highcharts = Highcharts;
-  constructor() { }
+  constructor(private BubblepotentialService: BubblePotentialService) { }
 
   ngOnInit() {
+    {
+      this.getArrayBS();
+      this.getArrayLV();
+      this.getArrayWP();
+    }
     this.chartOptions = {
       chart: {
         type: 'packedbubble',
@@ -50,7 +67,7 @@ export class BubblePotentialComponent implements OnInit {
             filter: {
               property: 'y',
               operator: '<',
-              value: 250
+              value: 1
             },
             style: {
               color: 'black',
@@ -132,4 +149,29 @@ export class BubblePotentialComponent implements OnInit {
     };
     HC_exporting(Highcharts);
   }
+
+  private getArrayBS() {
+    this.BubblepotentialService.getBSPotenzial('7230018').subscribe((data) => {
+      // console.log(data);
+      this.dataSource = data;
+      this.array = data;
+    });
+  }
+  private getArrayWP() {
+    this.BubblepotentialService.getWPPotenzial('7230018').subscribe((data) => {
+      // console.log(data);
+      this.dataSource = data;
+      this.array = data;
+    });
+  }
+  private getArrayLV() {
+    this.BubblepotentialService.getLVPotenzial('7230018').subscribe((data) => {
+      // console.log(data);
+      this.dataSource = data;
+      this.array = data;
+    });
+  }
 }
+
+
+
