@@ -1,16 +1,48 @@
-<mat-card-title>
+<div><mat-card-title>
   <mat-icon>list_alt</mat-icon>
-  Ihre offenen Aufgaben
+  Offene Aufgaben
 </mat-card-title>
+  <mat-card-subtitle> Dies ist eine Liste Ihrer offenen Aufgaben </mat-card-subtitle>
+
+  <mat-card-actions fxLayoutAlign="end">
+
+    <div class="news-card">
+
+      <button mat-button [matMenuTriggerFor]="menu">
+        <mat-icon>settings</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item (click)="refreshNews()">
+          <mat-icon>refresh</mat-icon>
+          Neu laden
+        </button>
+        <button mat-menu-item>
+          <mat-icon>clear</mat-icon>
+          Alle Entfernen
+        </button>
+      </mat-menu>
+
+    </div>
+
+  </mat-card-actions>
 
 <mat-list #list>
 
-  <mat-list-item *ngFor="let todo of todos;let indexOfelement = index;">
-    <h2 matLine>Aufgabe {{indexOfelement}}</h2>
+  <mat-list-item *ngFor="let todo of todos; let indexOfelement = index; ">
+    <h2 matLine>Aufgabe {{ indexOfelement + 1 }}</h2>
     <p matLine>Fällig: {{todo.naechsteFaelligkeit}}</p>
-    <p>Nächstes geplantes Gespräch vorbereiten für Kunde {{todo.kundennummer}}.</p>
+    <p matLine></p>
+    <p><mat-icon style="padding: 10px">phone</mat-icon></p>
+    <p>Nächstes geplantes Gespräch vorbereiten für Kunde {{todo.kundennummer}}</p>
+    <br><mat-divider></mat-divider> <br>
   </mat-list-item>
 
-  <br><mat-divider></mat-divider> <br>
 
 </mat-list>
+
+  <mat-paginator #paginator [pageSize]="pageSize" [pageSizeOptions]="[5, 10, 20]" [showFirstLastButtons]="true" [length]="totalSize"
+                 [pageIndex]="currentPage" >
+                 <!--(page)="pageEvent = handlePage($event)">-->
+  </mat-paginator>
+
+</div>

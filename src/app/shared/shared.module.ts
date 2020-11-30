@@ -16,7 +16,7 @@ import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { AreaComponent } from './widgets/area/area.component';
-import { HighchartsChartModule } from 'highcharts-angular';
+import { BubblePotentialComponent } from './widgets/bubble-potential/bubble-potential.component';
 import { CardComponent } from './widgets/card/card.component';
 import { PieComponent } from './widgets/pie/pie.component';
 import { DonutComponent } from './widgets/donut/donut.component';
@@ -26,6 +26,8 @@ import { GespraechsTableComponent } from './widgets/gespraechs-table/gespraechs-
 import {KundeninfoComponent} from './widgets/kundeninfo/kundeninfo.component';
 import {MatInputModule} from '@angular/material/input';
 import {ReactiveFormsModule} from '@angular/forms';
+
+import { HighchartsChartModule } from 'highcharts-angular';
 
 
 @NgModule({
@@ -40,6 +42,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     NewsCardComponent,
     TodoTableComponent,
     GespraechsTableComponent,
+    BubblePotentialComponent,
     KundeninfoComponent
   ],
     imports: [
@@ -71,6 +74,7 @@ import {ReactiveFormsModule} from '@angular/forms';
     TodoTableComponent,
     DonutComponent,
     GespraechsTableComponent,
+    BubblePotentialComponent,
     KundeninfoComponent
   ]
 })
