@@ -1,10 +1,7 @@
 import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {TodoTableService} from './Service/todo-table.service';
 import * as Highcharts from 'highcharts';
-import HC_exporting from 'highcharts/modules/exporting';
 import {MatPaginator, MatTableDataSource, PageEvent} from '@angular/material';
-import {Gespraechsplanung} from '../gespraechs-table/gespraechs-table.component';
-import {MatSort} from '@angular/material/sort';
 
 interface Todo {
   kundennummer: number;
@@ -17,10 +14,11 @@ interface Todo {
   styleUrls: ['./todo-table.component.scss']
 })
 export class TodoTableComponent implements OnInit {
-
   Highcharts = Highcharts;
+  public array: any;
   // tslint:disable-next-line:ban-types
-  public pageSize = 5;
+  todos: any = new MatTableDataSource();
+  public pageSize = 3;
   public currentPage = 0;
   public totalSize = 0;
 
@@ -31,17 +29,38 @@ export class TodoTableComponent implements OnInit {
 
   @Input() todo: Todo;
 
-  constructor(private todotableService: TodoTableService) { }
-
-  todos: Todo[];
-
-  ngOnInit() {
-
-    this.todotableService.getTodos('88').subscribe((data) => {
-      console.log(data);
-      // @ts-ignore
-      this.todos = data;
-    });
+  constructor(private todotableService: TodoTableService) {
   }
 
-}
+  ngOnInit() {
+    this.getArray();
+    this.todos.paginator = this.paginator;
+    }
+
+
+  public handlePage(e: any) {
+      this.currentPage = e.pageIndex;
+      this.pageSize = e.pageSize;
+      this.iterator();
+    }
+
+  private getArray() {
+      this.todotableService.getTodos('88')
+        .subscribe((data) => {
+          this.todos = data;
+          this.todos.paginator = this.paginator;
+          this.array = data;
+          this.totalSize = this.array.length;
+          this.iterator();
+        });
+    }
+
+  private iterator() {
+      const end = (this.currentPage + 1) * this.pageSize;
+      const start = this.currentPage * this.pageSize;
+      const part = this.array.slice(start, end);
+      this.todos = part;
+    }
+  }
+
+
