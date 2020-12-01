@@ -3,7 +3,6 @@ import * as Highcharts from 'highcharts';
 import { BubblePotentialService } from './Service/bubble-potential.service';
 import HC_exporting from 'highcharts/modules/exporting';
 import HC_more from 'highcharts/highcharts-more';
-import {MatTableDataSource} from '@angular/material/table';
 HC_more(Highcharts);
 
 export class KundenlistePkPotenzial {
@@ -20,11 +19,12 @@ export class KundenlistePkPotenzial {
   styleUrls: ['./bubble-potential.component.scss']
 })
 export class BubblePotentialComponent implements OnInit {
-  public array: any;
-  dataSource: any = new MatTableDataSource();
   chartOptions = {};
-  @Input() data: KundenlistePkPotenzial;
   Highcharts = Highcharts;
+  @Input() rang: KundenlistePkPotenzial;
+  arraybs: any;
+  arraywp: any;
+  arraylv: any;
   constructor(private BubblepotentialService: BubblePotentialService) { }
 
   ngOnInit() {
@@ -33,6 +33,7 @@ export class BubblePotentialComponent implements OnInit {
       this.getArrayLV();
       this.getArrayWP();
     }
+    // @ts-ignore
     this.chartOptions = {
       chart: {
         type: 'packedbubble',
@@ -80,71 +81,18 @@ export class BubblePotentialComponent implements OnInit {
       series: [{
         name: 'Wertpapiere',
         data: [{
-          name: 'Germany',
-          value: 767.1
-        },
-          {
-            name: 'Luxembourg',
-            value: 10.4
-          },
-          {
-            name: 'Macedonia',
-            value: 9.5
-          },
-          {
-            name: 'Moldova',
-            value: 7.8
-          },
-          {
-            name: 'Latvia',
-            value: 7.5
-          },
-          {
-            name: 'Cyprus',
-            value: 7.2
-          }]
+          name: this.arraywp.verbundfuehrer,
+          value: this.arraywp.wprang}, ]
       }, {
         name: 'Lebensversicherung',
         data: [{
-          name: 'Senegal',
-          value: 8.2
-        },
-          {
-            name: 'Ethiopia',
-            value: 8.9
-          },
-          {
-            name: 'United Republic of Tanzania',
-            value: 9.1
-          },
-          {
-            name: 'Nigeria',
-            value: 93.9
-          },
-          {
-            name: 'South Africa',
-            value: 392.7
-          }, {
-            name: 'Egypt',
-            value: 225.1
-          }, {
-            name: 'Algeria',
-            value: 141.5
-          }]
+          name: this.arraylv.verbundfuehrer,
+          value: this.arraylv.lvrang}, ]
       }, {
         name: 'Bausparen',
         data: [{
-          name: 'Australia',
-          value: 409.4
-        },
-          {
-            name: 'New Zealand',
-            value: 34.1
-          },
-          {
-            name: 'Papua New Guinea',
-            value: 7.1
-          }]
+          name: this.arraybs.verbundfuehrer,
+          value: this.arraybs.bsrang}, ]
       }]
     };
     HC_exporting(Highcharts);
@@ -152,26 +100,23 @@ export class BubblePotentialComponent implements OnInit {
 
   private getArrayBS() {
     this.BubblepotentialService.getBSPotenzial('7230018').subscribe((data) => {
-      // console.log(data);
-      this.dataSource = data;
-      this.array = data;
+       console.log(data);
+      // this.dataSource = data;
+       this.arraybs = data;
     });
   }
   private getArrayWP() {
     this.BubblepotentialService.getWPPotenzial('7230018').subscribe((data) => {
-      // console.log(data);
-      this.dataSource = data;
-      this.array = data;
+      console.log(data);
+      // this.dataSource = data;
+      this.arraywp = data;
     });
   }
   private getArrayLV() {
     this.BubblepotentialService.getLVPotenzial('7230018').subscribe((data) => {
-      // console.log(data);
-      this.dataSource = data;
-      this.array = data;
+      console.log(data);
+      // this.dataSource = data;
+      this.arraylv = data;
     });
   }
 }
-
-
-
