@@ -22,7 +22,11 @@ import { PieComponent } from './widgets/pie/pie.component';
 import { DonutComponent } from './widgets/donut/donut.component';
 import { NewsCardComponent } from './widgets/news-card/news-card.component';
 import { TodoTableComponent } from './widgets/todo-table/todo-table.component';
+import { DrilldownComponent } from './widgets/drilldown/drilldown.component';
 import { GespraechsTableComponent } from './widgets/gespraechs-table/gespraechs-table.component';
+import {KundeninfoComponent} from './widgets/kundeninfo/kundeninfo.component';
+import {MatInputModule} from '@angular/material/input';
+import {ReactiveFormsModule} from '@angular/forms';
 
 import { HighchartsChartModule } from 'highcharts-angular';
 
@@ -39,23 +43,27 @@ import { HighchartsChartModule } from 'highcharts-angular';
     NewsCardComponent,
     TodoTableComponent,
     GespraechsTableComponent,
-    BubblePotentialComponent
+    BubblePotentialComponent,
+    KundeninfoComponent,
+    DrilldownComponent
   ],
   imports: [
-    CommonModule,
-    MatDividerModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    FlexLayoutModule,
-    MatMenuModule,
-    MatListModule,
-    RouterModule,
-    HighchartsChartModule,
-    MatCardModule,
-    MatProgressSpinnerModule,
-    MatTableModule,
-    MatPaginatorModule
+      CommonModule,
+      MatDividerModule,
+      MatToolbarModule,
+      MatIconModule,
+      MatButtonModule,
+      FlexLayoutModule,
+      MatMenuModule,
+      MatListModule,
+      RouterModule,
+      HighchartsChartModule,
+      MatCardModule,
+      MatProgressSpinnerModule,
+      MatTableModule,
+      MatPaginatorModule,
+      MatInputModule,
+      ReactiveFormsModule
   ],
   exports: [
     HeaderComponent,
@@ -68,7 +76,9 @@ import { HighchartsChartModule } from 'highcharts-angular';
     TodoTableComponent,
     DonutComponent,
     GespraechsTableComponent,
-    BubblePotentialComponent
+    BubblePotentialComponent,
+    KundeninfoComponent,
+    DrilldownComponent
   ]
 })
 export class SharedModule { }
