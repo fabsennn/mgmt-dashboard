@@ -22,6 +22,7 @@ import { PieComponent } from './widgets/pie/pie.component';
 import { DonutComponent } from './widgets/donut/donut.component';
 import { NewsCardComponent } from './widgets/news-card/news-card.component';
 import { TodoTableComponent } from './widgets/todo-table/todo-table.component';
+import { DrilldownComponent } from './widgets/drilldown/drilldown.component';
 import { GespraechsTableComponent } from './widgets/gespraechs-table/gespraechs-table.component';
 import {KundeninfoComponent} from './widgets/kundeninfo/kundeninfo.component';
 import {MatInputModule} from '@angular/material/input';
@@ -43,7 +44,8 @@ import { HighchartsChartModule } from 'highcharts-angular';
     TodoTableComponent,
     GespraechsTableComponent,
     BubblePotentialComponent,
-    KundeninfoComponent
+    KundeninfoComponent,
+    DrilldownComponent
   ],
   imports: [
       CommonModule,
@@ -75,7 +77,8 @@ import { HighchartsChartModule } from 'highcharts-angular';
     DonutComponent,
     GespraechsTableComponent,
     BubblePotentialComponent,
-    KundeninfoComponent
+    KundeninfoComponent,
+    DrilldownComponent
   ]
 })
 export class SharedModule { }
