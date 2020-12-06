@@ -41,6 +41,9 @@ export class DrilldownComponent implements OnInit {
         }
 
       },
+      credits: {
+        enabled: false
+      },
       legend: {
         enabled: false
       },
