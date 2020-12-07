@@ -61,9 +61,9 @@ export class BubblePotentialComponent implements OnInit {
                 enabled: true,
                 format: '{point.name}',
                 filter: {
-                  property: '{point.value}',
-                  operator: '>=',
-                  value: 15
+                  property: 'y',
+                  operator: '<=',
+                  value: 3
                 },
                 style: {
                   color: 'black',
