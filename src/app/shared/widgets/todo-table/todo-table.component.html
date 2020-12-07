@@ -13,7 +13,7 @@
         <mat-icon>settings</mat-icon>
       </button>
       <mat-menu #menu="matMenu">
-        <button mat-menu-item (click)="refreshNews()">
+        <button mat-menu-item (click)="refreshToDoCard()">
           <mat-icon>refresh</mat-icon>
           Neu laden
         </button>
@@ -26,7 +26,7 @@
     </div>
 
   </mat-card-actions>
-
+<div>
   <table #table>
 
     <ng-container *ngFor="let todo of todos; let indexOfelement = index;">
@@ -35,11 +35,11 @@
         <span *ngIf="currentPage>0">{{(currentPage*3)+(indexOfelement+1)}}</span></h3>
       <p>Fällig: {{todo.naechsteFaelligkeit}}</p>
       <p> <mat-icon style="padding: 10px">phone</mat-icon> Nächstes geplantes Gespräch vorbereiten für Kunde {{todo.kundenname}} ({{todo.kundennummer}})</p>
-      <mat-divider style="width: 650px"></mat-divider>
+      <mat-divider></mat-divider>
     </ng-container>
 
-
   </table>
+</div>
 
   <mat-paginator #paginator [pageSize]="pageSize" [showFirstLastButtons]="false" [length]="totalSize"
                  [pageIndex]="currentPage" (page)="pageEvent = handlePage($event)">

@@ -41,6 +41,9 @@ export class DrilldownComponent implements OnInit {
         }
 
       },
+      credits: {
+        enabled: false
+      },
       legend: {
         enabled: false
       },
@@ -68,26 +71,26 @@ export class DrilldownComponent implements OnInit {
               name: "Derzeitiger Stand",
               y: 10.58,
               drilldown: "Derzeitiger Stand",
-              color: 'red'
+              color: 'lightgreen'
             },
             {
               name: "Jahresabsatz",
               y: 60.23,
               drilldown: "Jahresabsatz",
-              color: 'gray'
+              color: 'darkgrey'
             },
             {
 
               name: "Jahresziel",
               y: 65.66,
               drilldown: "Jahresziel",
-              color: 'gray'
+              color: 'grey'
             },
             {
               name: "Erfüllung des Zeitanteils",
               y: 10.57,
               drilldown: "DErfüllung des Zeitanteils",
-              color: 'blue'
+              color: 'lightblue'
             },
           ]
         }

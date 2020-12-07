@@ -20,48 +20,47 @@ export class PieComponent implements OnInit {
   ngOnInit() {
     this.chartOptions = {
       chart: {
-        plotBackgroundColor: null,
-        plotBorderWidth: null,
-        plotShadow: false,
-        type: 'pie',
+        type: 'bar'
       },
       title: {
-        text: 'Kundenkontakte'
+        text: 'Versicherungen'
       },
-      tooltip: {
-        pointFormat: '{series.name}: <b>{point.percentage:.1f}%</b>'
+      xAxis: {
+        categories: ['']
       },
-      plotOptions: {
-        pie: {
-          allowPointSelect: true,
-          cursor: 'pointer',
-          colors: ['#31fc03', '#fca103', '#d7fc03', '#fc0303'],
-          dataLabels: {
-            enabled: true,
-            format: '<b>{point.name}</b>: {point.percentage:.1f} %'
-          }
+      yAxis: {
+        min: 0,
+        title: {
+          text: 'Balance Ihrer abgeschlossenen Verträge'
         }
-      },
-      exporting: {
-        enabled: true
       },
       credits: {
         enabled: false
       },
+      legend: {
+        reversed: true
+      },
+      plotOptions: {
+        series: {
+          stacking: 'normal'
+        }
+      },
       series: [{
-        name: 'Anteil',
-        colorByPoint: true,
-        data: this.data
+        name: 'Krankenversicherung',
+        color: 'beige',
+        data: [5]
+      }, {
+        name: 'Unfallversicherung',
+        color: 'lightblue',
+        data: [2]
+      }, {
+        name: 'Sachversicherung',
+        color: 'lightgreen',
+        data: [3]
       }]
     };
 
     HC_exporting(Highcharts);
-
-    setTimeout(() => {
-      window.dispatchEvent(
-        new Event('resize')
-      );
-    }, 300);
   }
 
 }
