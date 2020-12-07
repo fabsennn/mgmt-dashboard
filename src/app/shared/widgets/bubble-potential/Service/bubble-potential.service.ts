@@ -9,16 +9,8 @@ export class BubblePotentialService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public getBSPotenzial(beraterID) {
-    return this.httpClient.get(`http://localhost:8080/kundenliste_pk/bs_potenzial/${beraterID}`);
-  }
-
-  public getLVPotenzial(beraterID) {
-    return this.httpClient.get(`http://localhost:8080/kundenliste_pk/lv_potenzial/${beraterID}`);
-  }
-
-  public getWPPotenzial(beraterID) {
-    return this.httpClient.get(`http://localhost:8080/kundenliste_pk/wp_potenzial/${beraterID}`);
+  public getAllPotenzial(beraterID) {
+    return this.httpClient.get(`http://localhost:8080/kundenliste_pk/all_potenzial/${beraterID}`);
   }
 
 }
