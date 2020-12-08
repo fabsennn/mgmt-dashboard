@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angula
 import {TodoTableService} from './Service/todo-table.service';
 import * as Highcharts from 'highcharts';
 import {MatPaginator, MatTableDataSource, PageEvent} from '@angular/material';
+// @ts-ignore
 import { TranslateService } from '@ngx-translate/core';
 
 interface Todo {
