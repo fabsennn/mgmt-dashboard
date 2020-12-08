@@ -57,6 +57,11 @@ export class GespraechsTableComponent implements OnInit {
       .subscribe((data) => {
         this.dataSource = data;
         this.dataSource.paginator = this.paginator;
+        this.paginator._intl.itemsPerPageLabel = 'Einträge pro Seite';
+        this.paginator._intl.nextPageLabel = 'Nächste Seite';
+        this.paginator._intl.previousPageLabel = 'Vorherige Seite';
+        this.paginator._intl.firstPageLabel = 'Erste Seite';
+        this.paginator._intl.lastPageLabel = 'Letzte Seite';
         this.array = data;
         this.totalSize = this.array.length;
         this.iterator();

@@ -14,6 +14,7 @@ interface Todo {
   styleUrls: ['./todo-table.component.scss']
 })
 export class TodoTableComponent implements OnInit {
+
   Highcharts = Highcharts;
   public array: any;
   // tslint:disable-next-line:ban-types
@@ -21,6 +22,7 @@ export class TodoTableComponent implements OnInit {
   public pageSize = 3;
   public currentPage = 0;
   public totalSize = 0;
+
 
   // @ts-ignore
   @ViewChild(MatPaginator) paginator: MatPaginator;
@@ -38,7 +40,6 @@ export class TodoTableComponent implements OnInit {
     this.todos.paginator = this.paginator;
   }
 
-
   public handlePage(e: any) {
     this.currentPage = e.pageIndex;
     this.pageSize = e.pageSize;
@@ -50,6 +51,9 @@ export class TodoTableComponent implements OnInit {
       .subscribe((data) => {
         this.todos = data;
         this.todos.paginator = this.paginator;
+        this.paginator._intl.itemsPerPageLabel = 'Einträge pro Seite';
+        this.paginator._intl.nextPageLabel = 'Nächste Seite';
+        this.paginator._intl.previousPageLabel = 'Vorherige Seite';
         this.array = data;
         this.totalSize = this.array.length;
         this.iterator();
