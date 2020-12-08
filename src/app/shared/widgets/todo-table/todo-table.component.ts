@@ -2,6 +2,7 @@ import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angula
 import {TodoTableService} from './Service/todo-table.service';
 import * as Highcharts from 'highcharts';
 import {MatPaginator, MatTableDataSource, PageEvent} from '@angular/material';
+import { TranslateService } from '@ngx-translate/core';
 
 interface Todo {
   kundennummer: number;
@@ -29,6 +30,7 @@ export class TodoTableComponent implements OnInit {
   @Output() reloadTodos: EventEmitter<any> = new EventEmitter();
 
   pageEvent: PageEvent;
+  translate: TranslateService;
 
   @Input() todo: Todo;
 
@@ -54,6 +56,19 @@ export class TodoTableComponent implements OnInit {
         this.paginator._intl.itemsPerPageLabel = 'Einträge pro Seite';
         this.paginator._intl.nextPageLabel = 'Nächste Seite';
         this.paginator._intl.previousPageLabel = 'Vorherige Seite';
+        this.paginator._intl.getRangeLabel = (page: number, pageSize: number, length: number): string => {
+          const of = this.translate ? this.translate.instant('mat-paginator-intl.of') : 'von';
+          if (length === 0 || pageSize === 0) {
+            return '0 ' + of + ' ' + length;
+          }
+          length = Math.max(length, 0);
+          const startIndex = ((page * pageSize) > length) ?
+            (Math.ceil(length / pageSize) - 1) * pageSize :
+            page * pageSize;
+
+          const endIndex = Math.min(startIndex + pageSize, length);
+          return startIndex + 1 + ' - ' + endIndex + ' ' + of + ' ' + length;
+        };
         this.array = data;
         this.totalSize = this.array.length;
         this.iterator();
