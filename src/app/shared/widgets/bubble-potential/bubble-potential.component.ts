@@ -16,7 +16,7 @@ export class KundenlistePkPotenzial {
   lv_rang: number;
 }
 
-const flipper = [0, 100, 90, 80, 75, 70, 65, 60, 55, 50, 45, 40, 35, 30, 20, 10];
+const flipper = [0, 100, 90, 80, 70, 60, 50, 40, 30, 20, 10];
 
 @Component({
   selector: 'app-bubble-potential',
@@ -107,25 +107,25 @@ export class BubblePotentialComponent implements OnInit {
             }, {
               name: this.arrayALL[9].nachname + ', ID: ' + this.arrayALL[9].id ,
               value: flipper[this.arrayALL[9].bs_rang]
-            }, {
-              name: this.arrayALL[10].nachname + ', ID: ' + this.arrayALL[10].id ,
-              value: flipper[this.arrayALL[10].bs_rang]
-            }, {
-              name: this.arrayALL[11].nachname + ', ID: ' + this.arrayALL[11].id ,
-              value: flipper[this.arrayALL[11].bs_rang]
-            }, {
-              name: this.arrayALL[12].nachname + ', ID: ' + this.arrayALL[12].id ,
-              value: flipper[this.arrayALL[12].bs_rang]
-            }, {
-              name: this.arrayALL[13].nachname + ', ID: ' + this.arrayALL[13].id ,
-              value: flipper[this.arrayALL[13].bs_rang]
-            }, {
-              name: this.arrayALL[14].nachname + ', ID: ' + this.arrayALL[14].id ,
-              value: flipper[this.arrayALL[14].bs_rang]
             }, ]
           }, {
             name: 'Wertpapiere',
             data: [{
+              name: this.arrayALL[10].nachname + ', ID: ' + this.arrayALL[10].id ,
+              value: flipper[this.arrayALL[10].wp_rang]
+            }, {
+              name: this.arrayALL[11].nachname + ', ID: ' + this.arrayALL[11].id ,
+              value: flipper[this.arrayALL[11].wp_rang]
+            }, {
+              name: this.arrayALL[12].nachname + ', ID: ' + this.arrayALL[12].id ,
+              value: flipper[this.arrayALL[12].wp_rang]
+            }, {
+              name: this.arrayALL[13].nachname + ', ID: ' + this.arrayALL[13].id ,
+              value: flipper[this.arrayALL[13].wp_rang]
+            }, {
+              name: this.arrayALL[14].nachname + ', ID: ' + this.arrayALL[14].id ,
+              value: flipper[this.arrayALL[14].wp_rang]
+            }, {
               name: this.arrayALL[15].nachname + ', ID: ' + this.arrayALL[15].id ,
               value: flipper[this.arrayALL[15].wp_rang]
             }, {
@@ -140,84 +140,39 @@ export class BubblePotentialComponent implements OnInit {
             }, {
               name: this.arrayALL[19].nachname + ', ID: ' + this.arrayALL[19].id ,
               value: flipper[this.arrayALL[19].wp_rang]
-            }, {
-              name: this.arrayALL[20].nachname + ', ID: ' + this.arrayALL[20].id ,
-              value: flipper[this.arrayALL[20].wp_rang]
-            }, {
-              name: this.arrayALL[21].nachname + ', ID: ' + this.arrayALL[21].id ,
-              value: flipper[this.arrayALL[21].wp_rang]
-            }, {
-              name: this.arrayALL[22].nachname + ', ID: ' + this.arrayALL[22].id ,
-              value: flipper[this.arrayALL[22].wp_rang]
-            }, {
-              name: this.arrayALL[23].nachname + ', ID: ' + this.arrayALL[23].id ,
-              value: flipper[this.arrayALL[23].wp_rang]
-            }, {
-              name: this.arrayALL[24].nachname + ', ID: ' + this.arrayALL[24].id ,
-              value: flipper[this.arrayALL[24].wp_rang]
-            }, {
-              name: this.arrayALL[25].nachname + ', ID: ' + this.arrayALL[25].id ,
-              value: flipper[this.arrayALL[25].wp_rang]
-            }, {
-              name: this.arrayALL[26].nachname + ', ID: ' + this.arrayALL[26].id ,
-              value: flipper[this.arrayALL[26].wp_rang]
-            }, {
-              name: this.arrayALL[27].nachname + ', ID: ' + this.arrayALL[27].id ,
-              value: flipper[this.arrayALL[27].wp_rang]
-            }, {
-              name: this.arrayALL[28].nachname + ', ID: ' + this.arrayALL[28].id ,
-              value: flipper[this.arrayALL[28].wp_rang]
-            }, {
-              name: this.arrayALL[29].nachname + ', ID: ' + this.arrayALL[29].id ,
-              value: flipper[this.arrayALL[29].wp_rang]
             }, ]
           }, {
             name: 'Lebensversicherung',
             data: [{
-              name: this.arrayALL[30].nachname + ', ID: ' + this.arrayALL[30].id ,
-              value: flipper[this.arrayALL[30].lv_rang]
+              name: this.arrayALL[20].nachname + ', ID: ' + this.arrayALL[20].id ,
+              value: flipper[this.arrayALL[20].lv_rang]
             }, {
-              name: this.arrayALL[31].nachname + ', ID: ' + this.arrayALL[31].id ,
-              value: flipper[this.arrayALL[31].lv_rang]
+              name: this.arrayALL[21].nachname + ', ID: ' + this.arrayALL[21].id ,
+              value: flipper[this.arrayALL[21].lv_rang]
             }, {
-              name: this.arrayALL[32].nachname + ', ID: ' + this.arrayALL[32].id ,
-              value: flipper[this.arrayALL[32].lv_rang]
+              name: this.arrayALL[22].nachname + ', ID: ' + this.arrayALL[22].id ,
+              value: flipper[this.arrayALL[22].lv_rang]
             }, {
-              name: this.arrayALL[33].nachname + ', ID: ' + this.arrayALL[33].id ,
-              value: flipper[this.arrayALL[33].lv_rang]
+              name: this.arrayALL[23].nachname + ', ID: ' + this.arrayALL[23].id ,
+              value: flipper[this.arrayALL[23].lv_rang]
             }, {
-              name: this.arrayALL[34].nachname + ', ID: ' + this.arrayALL[34].id ,
-              value: flipper[this.arrayALL[35].lv_rang]
+              name: this.arrayALL[24].nachname + ', ID: ' + this.arrayALL[24].id ,
+              value: flipper[this.arrayALL[24].lv_rang]
             }, {
-              name: this.arrayALL[35].nachname + ', ID: ' + this.arrayALL[35].id ,
-              value: flipper[this.arrayALL[35].lv_rang]
+              name: this.arrayALL[25].nachname + ', ID: ' + this.arrayALL[25].id ,
+              value: flipper[this.arrayALL[25].lv_rang]
             }, {
-              name: this.arrayALL[36].nachname + ', ID: ' + this.arrayALL[36].id ,
-              value: flipper[this.arrayALL[36].lv_rang]
+              name: this.arrayALL[26].nachname + ', ID: ' + this.arrayALL[26].id ,
+              value: flipper[this.arrayALL[26].lv_rang]
             }, {
-              name: this.arrayALL[37].nachname + ', ID: ' + this.arrayALL[37].id ,
-              value: flipper[this.arrayALL[37].lv_rang]
+              name: this.arrayALL[27].nachname + ', ID: ' + this.arrayALL[27].id ,
+              value: flipper[this.arrayALL[27].lv_rang]
             }, {
-              name: this.arrayALL[38].nachname + ', ID: ' + this.arrayALL[38].id ,
-              value: flipper[this.arrayALL[38].lv_rang]
+              name: this.arrayALL[28].nachname + ', ID: ' + this.arrayALL[28].id ,
+              value: flipper[this.arrayALL[28].lv_rang]
             }, {
-              name: this.arrayALL[39].nachname + ', ID: ' + this.arrayALL[39].id ,
-              value: flipper[this.arrayALL[39].lv_rang]
-            }, {
-              name: this.arrayALL[40].nachname + ', ID: ' + this.arrayALL[40].id ,
-              value: flipper[this.arrayALL[40].lv_rang]
-            }, {
-              name: this.arrayALL[41].nachname + ', ID: ' + this.arrayALL[41].id ,
-              value: flipper[this.arrayALL[41].lv_rang]
-            }, {
-              name: this.arrayALL[42].nachname + ', ID: ' + this.arrayALL[42].id ,
-              value: flipper[this.arrayALL[42].lv_rang]
-            }, {
-              name: this.arrayALL[42].nachname + ', ID: ' + this.arrayALL[42].id ,
-              value: flipper[this.arrayALL[42].lv_rang]
-            }, {
-              name: this.arrayALL[42].nachname + ', ID: ' + this.arrayALL[42].id ,
-              value: flipper[this.arrayALL[42].lv_rang]
+              name: this.arrayALL[29].nachname + ', ID: ' + this.arrayALL[29].id ,
+              value: flipper[this.arrayALL[29].lv_rang]
             }, ]
           }]
         };
