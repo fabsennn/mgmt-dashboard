@@ -31,7 +31,11 @@ export class DonutComponent implements OnInit {
       .subscribe ((data: number[]) => {
           // this.ArrayAlles = data;
         console.log(data);
+        // @ts-ignore
         this.chartOptions = {
+            lang: {
+              drillUpText: 'Zurück zur Jahresübersicht'
+            },
             chart: {
               plotBackgroundColor: null,
               plotBorderWidth: 0,
