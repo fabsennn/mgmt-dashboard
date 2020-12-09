@@ -29,6 +29,8 @@ import {MatInputModule} from '@angular/material/input';
 import {ReactiveFormsModule} from '@angular/forms';
 
 import { HighchartsChartModule } from 'highcharts-angular';
+import { TasksComponent } from './widgets/tasks/tasks.component';
+import {MatSelectModule} from "@angular/material/select";
 
 
 @NgModule({
@@ -45,25 +47,27 @@ import { HighchartsChartModule } from 'highcharts-angular';
     GespraechsTableComponent,
     BubblePotentialComponent,
     KundeninfoComponent,
-    DrilldownComponent
+    DrilldownComponent,
+    TasksComponent
   ],
   imports: [
-      CommonModule,
-      MatDividerModule,
-      MatToolbarModule,
-      MatIconModule,
-      MatButtonModule,
-      FlexLayoutModule,
-      MatMenuModule,
-      MatListModule,
-      RouterModule,
-      HighchartsChartModule,
-      MatCardModule,
-      MatProgressSpinnerModule,
-      MatTableModule,
-      MatPaginatorModule,
-      MatInputModule,
-      ReactiveFormsModule
+    CommonModule,
+    MatDividerModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    FlexLayoutModule,
+    MatMenuModule,
+    MatListModule,
+    RouterModule,
+    HighchartsChartModule,
+    MatCardModule,
+    MatProgressSpinnerModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatSelectModule
   ],
   exports: [
     HeaderComponent,
@@ -78,7 +82,8 @@ import { HighchartsChartModule } from 'highcharts-angular';
     GespraechsTableComponent,
     BubblePotentialComponent,
     KundeninfoComponent,
-    DrilldownComponent
+    DrilldownComponent,
+    TasksComponent
   ]
 })
 export class SharedModule { }
