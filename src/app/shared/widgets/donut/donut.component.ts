@@ -34,7 +34,13 @@ export class DonutComponent implements OnInit {
         // @ts-ignore
         this.chartOptions = {
             lang: {
-              drillUpText: 'Zurück zur Jahresübersicht'
+              drillUpText: 'Zurück zur Jahresübersicht',
+              printChart: 'Drucken',
+              viewFullscreen: 'Vollbildmodus',
+              downloadPNG: 'Download als PNG',
+              downloadPDF: 'Download als PDF',
+              downloadJPEG: 'Download als JPEG',
+              downloadSVG: 'Download als SVG'
             },
             chart: {
               plotBackgroundColor: null,
@@ -55,14 +61,6 @@ export class DonutComponent implements OnInit {
             },
             exporting: {
               enabled: true
-            },
-            lang: {
-              printChart: 'Drucken',
-              viewFullscreen: 'Vollbildmodus',
-              downloadPNG: 'Download als PNG',
-              downloadPDF: 'Download als PDF',
-              downloadJPEG: 'Download als JPEG',
-              downloadSVG: 'Download als SVG'
             },
             credits: {
               enabled: false
