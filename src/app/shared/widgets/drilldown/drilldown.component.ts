@@ -30,6 +30,7 @@ export class DrilldownComponent implements OnInit {
         }
       },
       lang: {
+        drillUpText: 'Zurück zur Übersicht',
         printChart: 'Drucken',
         viewFullscreen: 'Vollbildmodus',
         downloadPNG: 'Download als PNG',
