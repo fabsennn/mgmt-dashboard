@@ -36,7 +36,7 @@ export class BubblePotentialComponent implements OnInit {
         this.chartOptions = {
           chart: {
             type: 'packedbubble',
-            height: '45%'
+            height: '57%'
           },
           title: {
             text: 'Privatkunden-Potenzialanalyse'
@@ -51,7 +51,7 @@ export class BubblePotentialComponent implements OnInit {
           plotOptions: {
             packedbubble: {
               minSize: '10%',
-              maxSize: '140%',
+              maxSize: '95%',
               layoutAlgorithm: {
                 gravitationalConstant: 0.005,
                 splitSeries: true,
