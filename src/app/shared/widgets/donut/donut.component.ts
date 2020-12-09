@@ -35,13 +35,11 @@ export class DonutComponent implements OnInit {
             chart: {
               plotBackgroundColor: null,
               plotBorderWidth: 0,
-              plotShadow: false
+              plotShadow: false,
+              height: '74%'
             },
             title: {
-              text: 'Meine<br>Gespräche',
-              align: 'center',
-              verticalAlign: 'middle',
-              y: 60
+              text: 'Gesprächssituation'
             },
             tooltip: {
               pointFormat: '{series.name}: <b>{point.y} Gespräche'
@@ -70,14 +68,14 @@ export class DonutComponent implements OnInit {
                 },
                 startAngle: -90,
                 endAngle: 90,
-                center: ['50%', '75%'],
-                size: '130%'
+                center: ['50%', '85%'],
+                size: '150%'
               }
             },
             series: [{
               type: 'pie',
               name: 'Gespräche 2020',
-              innerSize: '50%',
+              innerSize: '55%',
               data: [{name: 'Geführte Gespräche',
                 id: 'GG',
                 y: data[0],
