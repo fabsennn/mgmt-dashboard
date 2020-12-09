@@ -48,6 +48,14 @@ export class BubblePotentialComponent implements OnInit {
           credits: {
             enabled: false
           },
+          lang: {
+            printChart: 'Drucken',
+            viewFullscreen: 'Vollbildmodus',
+            downloadPNG: 'Download als PNG',
+            downloadPDF: 'Download als PDF',
+            downloadJPEG: 'Download als JPEG',
+            downloadSVG: 'Download als SVG'
+          },
           plotOptions: {
             packedbubble: {
               minSize: '10%',

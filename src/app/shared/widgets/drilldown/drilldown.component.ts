@@ -29,6 +29,14 @@ export class DrilldownComponent implements OnInit {
           enabled: true
         }
       },
+      lang: {
+        printChart: 'Drucken',
+        viewFullscreen: 'Vollbildmodus',
+        downloadPNG: 'Download als PNG',
+        downloadPDF: 'Download als PDF',
+        downloadJPEG: 'Download als JPEG',
+        downloadSVG: 'Download als SVG'
+      },
       xAxis: {
         type: 'category'
       },
