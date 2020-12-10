@@ -1,7 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import HC_exporting from 'highcharts/modules/exporting';
-import {getOptions} from 'highcharts';
 
 @Component({
   selector: 'app-widget-pie',
