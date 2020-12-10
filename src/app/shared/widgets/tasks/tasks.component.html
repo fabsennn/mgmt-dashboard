@@ -1,34 +1,34 @@
 <mat-card-title><mat-icon>create</mat-icon>
   Neuigkeiten anlegen</mat-card-title>
 
-<mat-card-subtitle> Geben Sie hier Ihre Neuigkeiten ein </mat-card-subtitle>
+<!--<mat-card-subtitle> Geben Sie hier Ihre Neuigkeiten ein </mat-card-subtitle>-->
 <hr>
 <mat-card-content>
   <div>
-  <textarea id="news" rows="10" cols="80"></textarea>
+  <textarea [(ngModel)]="news" name="news" rows="10" cols="60" placeholder="Geben Sie hier Ihre Neuigkeiten ein..."></textarea>
   </div>
 
   <div>
   <mat-form-field style="margin-right:10px;">
   <mat-label>Berater</mat-label>
-  <mat-select id="berater">
-  <mat-option value="maxmustermann">Max Mustermann</mat-option>
+  <mat-select id="berater" [(ngModel)]="berater">
+  <mat-option value="Max Mustermann">Max Mustermann</mat-option>
   </mat-select>
   </mat-form-field>
 
 <mat-form-field>
   <mat-label>Dringlichkeit</mat-label>
-  <mat-select id="dringlichkeit">
-    <mat-option id="sofort" value="sofort">Sofort</mat-option>
-    <mat-option id="sehrdringend" value="sehrdringend">Sehr dringend</mat-option>
-    <mat-option id="dringend" value="dringend">Dringend</mat-option>
-    <mat-option id="normal" value="normal">Normal</mat-option>
-    <mat-option id="nichtdringend" value="nichtdringend">Nicht dringend</mat-option>
+  <mat-select id="dringlichkeit" [(ngModel)]="dringlichkeit">
+    <mat-option id="sofort" value="Sofort">Sofort</mat-option>
+    <mat-option id="sehrdringend" value="Sehr dringend">Sehr dringend</mat-option>
+    <mat-option id="dringend" value="Dringend">Dringend</mat-option>
+    <mat-option id="normal" value="Normal">Normal</mat-option>
+    <mat-option id="nichtdringend" value="Nicht dringend">Nicht dringend</mat-option>
   </mat-select>
 </mat-form-field>
 
   <section>
-    <button mat-raised-button color="primary">Senden</button>
+    <button mat-raised-button color="primary" (click)="postData()">Senden</button>
   </section>
   </div>
 </mat-card-content>

@@ -26,7 +26,7 @@ import { DrilldownComponent } from './widgets/drilldown/drilldown.component';
 import { GespraechsTableComponent } from './widgets/gespraechs-table/gespraechs-table.component';
 import {KundeninfoComponent} from './widgets/kundeninfo/kundeninfo.component';
 import {MatInputModule} from '@angular/material/input';
-import {ReactiveFormsModule} from '@angular/forms';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { HighchartsChartModule } from 'highcharts-angular';
 import { TasksComponent } from './widgets/tasks/tasks.component';
@@ -50,25 +50,26 @@ import {MatSelectModule} from "@angular/material/select";
     DrilldownComponent,
     TasksComponent
   ],
-  imports: [
-    CommonModule,
-    MatDividerModule,
-    MatToolbarModule,
-    MatIconModule,
-    MatButtonModule,
-    FlexLayoutModule,
-    MatMenuModule,
-    MatListModule,
-    RouterModule,
-    HighchartsChartModule,
-    MatCardModule,
-    MatProgressSpinnerModule,
-    MatTableModule,
-    MatPaginatorModule,
-    MatInputModule,
-    ReactiveFormsModule,
-    MatSelectModule
-  ],
+    imports: [
+        CommonModule,
+        MatDividerModule,
+        MatToolbarModule,
+        MatIconModule,
+        MatButtonModule,
+        FlexLayoutModule,
+        MatMenuModule,
+        MatListModule,
+        RouterModule,
+        HighchartsChartModule,
+        MatCardModule,
+        MatProgressSpinnerModule,
+        MatTableModule,
+        MatPaginatorModule,
+        MatInputModule,
+        ReactiveFormsModule,
+        MatSelectModule,
+        FormsModule
+    ],
   exports: [
     HeaderComponent,
     FooterComponent,
