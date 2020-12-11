@@ -4,7 +4,7 @@
   Neuigkeiten
 </mat-card-title>
 
-<mat-card-subtitle> Hier sind Ihre wichtigsten Neuigkeiten </mat-card-subtitle>
+<mat-card-subtitle> Dies ist eine Liste Ihrer eingetragenen Neuigkeiten </mat-card-subtitle>
 
 <mat-card-actions fxLayoutAlign="end">
   <div class='news-content'>
@@ -25,14 +25,13 @@
 </mat-card-actions>
 
   <div>
-    <table aria-describedby="Tabelle mit Neuigkeiten" #table>
-      <th scope="col"></th>
+    <table aria-describedby="Tabelle mit Neuigkeiten" #table><th scope="col"></th>
       <ng-container *ngFor="let news of yournews; let indexOfelement = index;">
         <h3>Neuigkeit
         <span *ngIf="currentPage==0">{{indexOfelement+1}}</span>
           <span *ngIf="currentPage>0">{{(currentPage*3)+(indexOfelement+1)}}</span></h3>
         <p>Dringlichkeit: {{news.dringlichkeit}}</p>
-        <p> <mat-icon style="padding: 10px">phone</mat-icon> {{news.neuigkeit}}</p>
+        <p> <mat-icon style="padding: 10px">sms_failed</mat-icon> {{news.neuigkeit}}</p>
         <mat-divider></mat-divider>
       </ng-container>
     </table>
