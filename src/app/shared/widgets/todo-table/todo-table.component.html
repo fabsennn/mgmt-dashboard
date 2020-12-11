@@ -27,8 +27,9 @@
 
   </mat-card-actions>
 <div>
-  <table #table>
+  <table aria-describedby="Tabelle mit offenen Gespraechen" #table>
 
+    <th scope="col"></th>
     <ng-container *ngFor="let todo of todos; let indexOfelement = index;">
       <h3>Aufgabe
         <span *ngIf="currentPage==0">{{indexOfelement+1}}</span>

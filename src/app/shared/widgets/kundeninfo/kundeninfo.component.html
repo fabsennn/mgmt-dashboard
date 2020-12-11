@@ -8,25 +8,25 @@
         <input type="number" matInput placeholder="123456" formControlName="kundennr">
       </mat-form-field>
     </div>
-    <button mat-raised-button color="primary" type="submit">Submit</button>
+    <button mat-raised-button color="primary" type="submit">Anzeigen</button>
   </form>
 </div>
 
 <div>
   <table mat-table [dataSource]="dataSource" matSort>
-
+    <caption>Versicherungsbetraege</caption>
     <ng-container matColumnDef="Krankenversicherung">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Krankenversicherung </th>
+      <th scope="col" mat-header-cell *matHeaderCellDef mat-sort-header> Krankenversicherung </th>
       <td mat-cell *matCellDef="let kundeninfos"> {{kundeninfos.krankenvers}} </td>
     </ng-container>
 
     <ng-container matColumnDef="Unfallversicherung">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Unfallversicherung </th>
+      <th scope="col" mat-header-cell *matHeaderCellDef mat-sort-header> Unfallversicherung </th>
       <td mat-cell *matCellDef="let kundeninfos"> {{kundeninfos.unfallvers}} </td>
     </ng-container>
 
     <ng-container matColumnDef="Sachversicherung">
-      <th mat-header-cell *matHeaderCellDef mat-sort-header> Sachversicherung </th>
+      <th scope="col" mat-header-cell *matHeaderCellDef mat-sort-header> Sachversicherung </th>
       <td mat-cell *matCellDef="let kundeninfos"> {{kundeninfos.sachvers}} </td>
     </ng-container>
 

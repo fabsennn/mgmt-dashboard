@@ -1,5 +1,5 @@
 import {Component, Input, OnInit, ViewChild} from '@angular/core';
-import {MatPaginator, MatTableDataSource, PageEvent} from '@angular/material';
+import { MatTableDataSource } from '@angular/material';
 import {MatSort} from '@angular/material/sort';
 import {KundeninfoService} from './Service/kundeninfo.service';
 import {FormBuilder} from '@angular/forms';

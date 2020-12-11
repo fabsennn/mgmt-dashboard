@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import { BubblePotentialService } from './Service/bubble-potential.service';
 import HC_exporting from 'highcharts/modules/exporting';
