@@ -30,9 +30,9 @@ export class DonutComponent implements OnInit {
       .pipe(take(1))
       .subscribe ((data: number[]) => {
           // this.ArrayAlles = data;
-        console.log(data);
-        // @ts-ignore
-        this.chartOptions = {
+          console.log(data);
+          // @ts-ignore
+          this.chartOptions = {
             lang: {
               drillUpText: 'Zurück zur Jahresübersicht',
               printChart: 'Drucken',
@@ -67,7 +67,7 @@ export class DonutComponent implements OnInit {
             },
             plotOptions: {
               pie: {
-                dataLabels: {
+                /*dataLabels: {
                   enabled: true,
                   distance: -50,
                   style: {
@@ -75,7 +75,14 @@ export class DonutComponent implements OnInit {
                     color: 'white',
                     fontsize: 'big'
                   }
+              }*/
+                allowPointSelect: true,
+                cursor: 'pointer',
+                dataLabels: {
+                  enabled: false
                 },
+                showInLegend: true,
+                // },
                 startAngle: -90,
                 endAngle: 90,
                 center: ['50%', '85%'],
@@ -84,13 +91,13 @@ export class DonutComponent implements OnInit {
             },
             series: [{
               type: 'pie',
-              name: 'Gespräche 2020',
+              name: 'Gespräche 2020' ,
               innerSize: '55%',
               data: [{name: 'Geführte Gespräche',
                 id: 'GG',
                 y: data[0],
                 drilldown: 'GG'},
-                {name: 'Offene <br> Gespräche',
+                {name: 'Offene Gespräche',
                   id: 'OG',
                   y: data[5],
                   drilldown: 'OG'}
