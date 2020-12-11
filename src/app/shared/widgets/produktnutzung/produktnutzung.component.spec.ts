@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PieComponent } from './pie.component';
+import { ProduktnutzungComponent } from './produktnutzung.component';
 
-describe('PieComponent', () => {
-  let component: PieComponent;
-  let fixture: ComponentFixture<PieComponent>;
+describe('ProduktnutzungComponent', () => {
+  let component: ProduktnutzungComponent;
+  let fixture: ComponentFixture<ProduktnutzungComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PieComponent ]
+      declarations: [ ProduktnutzungComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PieComponent);
+    fixture = TestBed.createComponent(ProduktnutzungComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
