@@ -18,7 +18,7 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { AreaComponent } from './widgets/area/area.component';
 import { BubblePotentialComponent } from './widgets/bubble-potential/bubble-potential.component';
 import { CardComponent } from './widgets/card/card.component';
-import { PieComponent } from './widgets/pie/pie.component';
+import { ProduktnutzungComponent } from './widgets/produktnutzung/produktnutzung.component';
 import { DonutComponent } from './widgets/donut/donut.component';
 import { NewsCardComponent } from './widgets/news-card/news-card.component';
 import { TodoTableComponent } from './widgets/todo-table/todo-table.component';
@@ -40,7 +40,7 @@ import {MatSelectModule} from '@angular/material/select';
     SidebarComponent,
     AreaComponent,
     CardComponent,
-    PieComponent,
+    ProduktnutzungComponent,
     DonutComponent,
     NewsCardComponent,
     TodoTableComponent,
@@ -76,7 +76,7 @@ import {MatSelectModule} from '@angular/material/select';
     SidebarComponent,
     AreaComponent,
     CardComponent,
-    PieComponent,
+    ProduktnutzungComponent,
     NewsCardComponent,
     TodoTableComponent,
     DonutComponent,
