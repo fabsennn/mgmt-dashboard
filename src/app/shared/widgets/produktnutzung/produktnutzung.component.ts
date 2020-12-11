@@ -75,5 +75,6 @@ export class ProduktnutzungComponent implements OnInit {
         }
       ],
     };
+    HC_exporting(Highcharts);
   }
 }
