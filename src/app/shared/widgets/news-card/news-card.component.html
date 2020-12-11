@@ -1,3 +1,4 @@
+<div>
 <mat-card-title>
   <mat-icon>all_inbox</mat-icon>
   Neuigkeiten
@@ -5,27 +6,8 @@
 
 <mat-card-subtitle> Hier sind Ihre wichtigsten Neuigkeiten </mat-card-subtitle>
 
-<mat-card-content>
-  <div class='news-content'>
-    <div *ngFor="let article of articles">
-      <h2>{{article.title}}</h2>
-
-      <p>
-        {{article.description}}
-      </p>
-      <a href="{{article.url}}">Read full article</a>
-    </div>
-  </div>
-
-  <div style="display: none">
-    <mat-spinner></mat-spinner>
-  </div>
-</mat-card-content>
-
 <mat-card-actions fxLayoutAlign="end">
-
-  <div class="news-card">
-
+  <div class='news-content'>
     <button mat-button [matMenuTriggerFor]="menu">
       <mat-icon>settings</mat-icon>
     </button>
@@ -36,10 +18,28 @@
       </button>
       <button mat-menu-item>
         <mat-icon>clear</mat-icon>
-        Alle Entfernen
+        Alle entfernen
       </button>
     </mat-menu>
+  </div>
+</mat-card-actions>
 
+  <div>
+    <table aria-describedby="Tabelle mit Neuigkeiten" #table>
+      <th scope="col"></th>
+      <ng-container *ngFor="let news of yournews; let indexOfelement = index;">
+        <h3>Neuigkeit
+        <span *ngIf="currentPage==0">{{indexOfelement+1}}</span>
+          <span *ngIf="currentPage>0">{{(currentPage*3)+(indexOfelement+1)}}</span></h3>
+        <p>Dringlichkeit: {{news.dringlichkeit}}</p>
+        <p> <mat-icon style="padding: 10px">phone</mat-icon> {{news.neuigkeit}}</p>
+        <mat-divider></mat-divider>
+      </ng-container>
+    </table>
   </div>
 
-</mat-card-actions>
+  <mat-paginator #paginator [pageSize]="pageSize" [showFirstLastButtons]="false" [length]="totalSize"
+                 [pageIndex]="currentPage" (page)="pageEvent = handlePage($event)">
+  </mat-paginator>
+
+</div>

@@ -30,7 +30,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
 import { HighchartsChartModule } from 'highcharts-angular';
 import { TasksComponent } from './widgets/tasks/tasks.component';
-import {MatSelectModule} from "@angular/material/select";
+import {MatSelectModule} from '@angular/material/select';
 
 
 @NgModule({
