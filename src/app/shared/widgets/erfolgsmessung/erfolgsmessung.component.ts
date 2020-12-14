@@ -49,6 +49,9 @@ export class ErfolgsmessungComponent implements OnInit {
               text: 'Absatz'
             }
           },
+          credits: {
+            enabled: false
+          },
           xAxis: {
             categories: ['Januar', 'Februar', 'März', 'April',
               'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember']
