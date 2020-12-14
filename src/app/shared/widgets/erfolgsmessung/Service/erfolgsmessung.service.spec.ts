@@ -1,7 +1,6 @@
 import { TestBed } from '@angular/core/testing';
 
 import { ErfolgsmessungService } from './erfolgsmessung.service';
-
 describe('ErfolgsmessungService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 

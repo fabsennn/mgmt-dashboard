@@ -8,7 +8,6 @@ import { ganttChart } from 'highcharts';
 import {take} from 'rxjs/operators';
 import {ErfolgsmessungService} from '../erfolgsmessung/Service/erfolgsmessung.service';
 
-
 @Component({
   selector: 'app-erfolgsmessung',
   templateUrl: './erfolgsmessung.component.html',
