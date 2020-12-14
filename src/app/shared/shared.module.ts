@@ -7,7 +7,7 @@ import {
   MatButtonModule,
   MatMenuModule,
   MatListModule,
-  MatCardModule, MatProgressSpinnerModule, MatTableModule, MatPaginatorModule
+  MatCardModule, MatProgressSpinnerModule, MatTableModule, MatPaginatorModule, MatSortModule
 } from '@angular/material';
 import { FlexLayoutModule } from '@angular/flex-layout';
 import { RouterModule } from '@angular/router';
@@ -70,7 +70,8 @@ import {MatSelectModule} from '@angular/material/select';
         MatInputModule,
         ReactiveFormsModule,
         MatSelectModule,
-        FormsModule
+        FormsModule,
+        MatSortModule
     ],
   exports: [
     HeaderComponent,
@@ -87,7 +88,8 @@ import {MatSelectModule} from '@angular/material/select';
     BubblePotentialComponent,
     KundeninfoComponent,
     DrilldownComponent,
-    TasksComponent
+    TasksComponent,
+    MatSortModule
   ]
 })
 export class SharedModule { }

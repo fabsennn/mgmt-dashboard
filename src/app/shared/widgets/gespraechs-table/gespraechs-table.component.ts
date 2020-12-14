@@ -1,5 +1,5 @@
 import {Component, Input, OnInit, ViewChild} from '@angular/core';
-import {MatPaginator, MatTableDataSource, MatSort, PageEvent} from '@angular/material';
+import {MatPaginator, MatTableDataSource, MatSort, PageEvent, MatButtonModule} from '@angular/material';
 import {GespraechsTableService} from './Service/gespraechs-table.service';
 
 
@@ -44,6 +44,11 @@ export class GespraechsTableComponent implements OnInit {
     this.getArray();
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
+  }
+
+  public alsIstMarkieren(element: any) {
+    console.log('Element ID: ' + element);
+    this.gespraechstableService.setGespraechToIst(element);
   }
 
   public handlePage(e: any) {
