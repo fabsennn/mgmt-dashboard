@@ -19,6 +19,7 @@ import { AreaComponent } from './widgets/area/area.component';
 import { BubblePotentialComponent } from './widgets/bubble-potential/bubble-potential.component';
 import { CardComponent } from './widgets/card/card.component';
 import { PieComponent } from './widgets/pie/pie.component';
+import { ErfolgsmessungComponent } from './widgets/erfolgsmessung/erfolgsmessung.component';
 import { DonutComponent } from './widgets/donut/donut.component';
 import { NewsCardComponent } from './widgets/news-card/news-card.component';
 import { TodoTableComponent } from './widgets/todo-table/todo-table.component';
