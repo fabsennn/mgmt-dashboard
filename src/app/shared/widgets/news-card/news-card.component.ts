@@ -8,6 +8,7 @@ import { TranslateService } from '@ngx-translate/core';
 interface News {
   neuigkeit: string;
   dringlichkeit: string;
+  datum: string;
 }
 
 @Component({
