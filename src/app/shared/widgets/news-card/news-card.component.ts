@@ -19,6 +19,8 @@ interface News {
 
 export class NewsCardComponent implements OnInit {
 
+  constructor(private newscardService: NewsCardService) { }
+
   Highcharts = Highcharts;
   public newsarray: any;
   yournews: any = new MatTableDataSource();
@@ -33,12 +35,16 @@ export class NewsCardComponent implements OnInit {
   translate: TranslateService;
 
   @Input() news: News;
-
-  constructor(private newscardService: NewsCardService) { }
+  mySubscription: any;
 
   ngOnInit() {
     this.getArray();
     this.yournews.paginator = this.paginator;
+    this.refresh();
+  }
+
+  public refresh() {
+    setTimeout(() => { this.ngOnInit(); }, 1000 * 10);
   }
 
   public handlePage(e: any) {
