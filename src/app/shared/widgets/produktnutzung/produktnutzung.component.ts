@@ -14,12 +14,13 @@ export class ProduktnutzungComponent implements OnInit {
 
   @Input() data = [];
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
     this.chartOptions = {
       chart: {
-        type: 'line'
+        type: 'bar'
       },
       lang: {
         printChart: 'Drucken',
@@ -30,51 +31,50 @@ export class ProduktnutzungComponent implements OnInit {
         downloadSVG: 'Download als SVG'
       },
       title: {
-        text: 'Produktnutzungsbericht'
+        text: 'Produktnutzung'
       },
       subtitle: {
-        text: 'pro Kundentyp'
+        text: 'pro Beraterplatz'
+      },
+      xAxis: {
+        categories: ['Krankenversicherung', 'Sachversicherung', 'KFZ-Versicherung', 'Unfallversicherung'],
+        title: {
+          text: null
+        }
       },
       credits: {
         enabled: false
       },
-      xAxis: {
-        categories: ['KundeA', 'KundeB', 'KundeC', 'KundeD']
-      },
       yAxis: {
+        min: 0,
         title: {
-          text: 'Euro'
+          text: 'Stück',
+          align: 'high'
+        },
+        labels: {
+          overflow: 'justify'
         }
       },
+      tooltip: {
+        valueSuffix: '<b>{point.name}</b>  -  Verbünde: 165/1127'
+      },
       plotOptions: {
-        line: {
+        bar: {
           dataLabels: {
             enabled: true
-          },
-          enableMouseTracking: false
+          }
         }
       },
       series: [{
-        name: 'Volumen (Aktiv)',
-        data: [282300, 85000, 0, 1926000],
-        color: 'lightgrey'
+        name: 'Anzahl pro Beraterplatz',
+        color: 'lightgreen',
+        data: [36, 52, 12, 58]
       }, {
-        name: 'Ø (Aktiv)',
-        data: [141000, 0, 85000, 321000],
-        color: 'lightgreen'
-      },
-        {
-          name: 'Volumen (Passiv)',
-          data: [75000, 841000, 186000, 169000],
-          color: 'lightblue'
-        },
-        {
-          name: 'Ø (Passiv)',
-          data: [37000, 841000, 186000, 28000],
-          color: 'grey'
-        }
-      ],
+        name: 'Gesamtanzahl',
+        color: 'grey',
+        data: [300, 281, 282, 211]
+      }]
     };
-    HC_exporting(Highcharts);
   }
 }
+
