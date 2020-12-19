@@ -1,4 +1,22 @@
-<highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions"
-                  *ngIf="!!chartOptions"
-                  style="width: 100%; display: block;">
-</highcharts-chart>
+<div>
+  <highcharts-chart [Highcharts]="Highcharts" [options]="chartOptions"
+                    *ngIf="!!chartOptions"
+                    style="width: 100%; display: block;">
+  </highcharts-chart>
+
+  <script src="https://code.highcharts.com/highcharts.js"></script>
+  <script src="https://rawgit.com/mholt/PapaParse/master/papaparse.js"></script>
+
+  <div class="container" id="container1"></div>
+  <div class="container" id="container2"></div>
+  <div class="container" id="container3"></div>
+
+  <select name="DropDown" id="select">
+    <option value="V">Versicherungen</option>
+    <option value="W">Wertpapiere</option>
+    <option value="E">Erträge</option>
+    <option value="B">Bausparen</option>
+    <option value="L">Lebensversicherungen</option>
+  </select>
+
+</div>
