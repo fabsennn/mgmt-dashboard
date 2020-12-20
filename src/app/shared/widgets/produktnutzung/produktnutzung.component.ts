@@ -56,7 +56,7 @@ export class ProduktnutzungComponent implements OnInit {
         }
       },
       tooltip: {
-        valueSuffix: '<b>{point.name}</b> Verbünde: Anzahl<b>{point.value}</b>'
+        valueSuffix: '<b>{point.name}</b> Verbünde: Stück<b>{point.value}</b>'
       },
       plotOptions: {
         bar: {
@@ -66,17 +66,17 @@ export class ProduktnutzungComponent implements OnInit {
         }
       },
       series: [{
-        name: 'Beraterplatz 1',
+        name: 'Beraterplatz 723 0018',
         color: 'lightgreen',
         data: [36, 52, 12, 58],
         value: 'Verbünde'
       }, {
-        name: 'Beraterplatz 2',
+        name: 'Beraterplatz 723 0017',
         value: 1127,
         color: 'lightblue',
         data: [32, 32, 31, 11]
       }, {
-        name: 'Gesamtanzahl',
+        name: 'Gesamt - 721 FK',
         value: 1127,
         color: 'grey',
         data: [300, 281, 282, 211]
