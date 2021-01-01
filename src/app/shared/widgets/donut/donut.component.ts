@@ -30,7 +30,7 @@ export class DonutComponent implements OnInit {
       .pipe(take(1))
       .subscribe ((data: number[]) => {
           // this.ArrayAlles = data;
-          console.log(data);
+          // console.log(data);
           // @ts-ignore
           this.chartOptions = {
             lang: {

@@ -1,6 +1,7 @@
 import { TestBed } from '@angular/core/testing';
 
 import { ProduktNutzungService } from './produktnutzung.service';
+
 describe('ProduktNutzungService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
