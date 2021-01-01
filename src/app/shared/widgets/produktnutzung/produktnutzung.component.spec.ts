@@ -1,7 +1,6 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { ProduktnutzungComponent } from './produktnutzung.component';
-
 describe('ProduktnutzungComponent', () => {
   let component: ProduktnutzungComponent;
   let fixture: ComponentFixture<ProduktnutzungComponent>;

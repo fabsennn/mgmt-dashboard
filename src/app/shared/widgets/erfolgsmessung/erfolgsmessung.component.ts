@@ -29,7 +29,6 @@ export class ErfolgsmessungComponent implements OnInit {
       .pipe(take(1))
       .subscribe ((data: number[]) => {
         // this.ArrayAlles = data;
-        console.log(data);
         // @ts-ignore
         this.chartOptions = {
           lang: {
