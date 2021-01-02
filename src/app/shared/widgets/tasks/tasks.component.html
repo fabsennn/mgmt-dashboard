@@ -8,7 +8,7 @@
   </div>
 
   <div>
-    <input type="file">
+    <input type="file" [(ngModel)]="datei">
   </div>
 
   <div>
@@ -33,5 +33,28 @@
   <section>
     <button mat-raised-button color="primary" (click)="postData()" onclick="location.reload()">Senden</button>
   </section>
+  </div>
+
+  <br>
+  <div> <!-- Datei-Upload -->
+    <button mat-raised-button color="primary" (click)="onClick()" [(ngModel)]="datei">
+      <mat-icon>file_upload</mat-icon>
+      {{text}}
+    </button>
+    <br/>
+    <ul>
+      <li *ngFor="let file of files" [@fadeInOut]="file.state">
+        <mat-progress-bar [value]="file.progress"></mat-progress-bar>
+        <span id="file-label">
+            {{file.data.name}}
+          <a title="Retry" (click)="retryFile(file)" *ngIf="file.canRetry">
+            <mat-icon>refresh</mat-icon></a>
+            <a title="Cancel" (click)="cancelFile(file)" *ngIf="file.canCancel">
+            <mat-icon>cancel</mat-icon></a>
+            </span>
+      </li>
+    </ul>
+    <input type="file" id="fileUpload" name="fileUpload"
+           style="display:none;"/>
   </div>
 </mat-card-content>

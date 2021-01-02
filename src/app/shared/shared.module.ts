@@ -32,6 +32,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { TasksComponent } from './widgets/tasks/tasks.component';
 import {MatSelectModule} from '@angular/material/select';
+import {MatProgressBarModule} from "@angular/material/progress-bar";
 
 
 @NgModule({
@@ -71,7 +72,8 @@ import {MatSelectModule} from '@angular/material/select';
         ReactiveFormsModule,
         MatSelectModule,
         FormsModule,
-        MatSortModule
+        MatSortModule,
+        MatProgressBarModule
     ],
   exports: [
     HeaderComponent,
