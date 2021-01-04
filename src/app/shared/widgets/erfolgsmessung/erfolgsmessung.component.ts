@@ -3,6 +3,7 @@ import * as Highcharts from 'highcharts';
 import HC_exporting from 'highcharts/modules/exporting';
 import drilldown from 'highcharts/modules/drilldown.js';
 import xrange from 'highcharts/modules/xrange.js';
+import heatmap from 'highcharts/modules/heatmap.js';
 import gantt from 'highcharts/modules/gantt.js';
 import { ganttChart } from 'highcharts';
 import {take} from 'rxjs/operators';
@@ -19,6 +20,7 @@ export class ErfolgsmessungComponent implements OnInit {
   chartOptions: any = null;
   drilldown = drilldown(Highcharts);
   xrange = xrange(Highcharts);
+  heatmap = heatmap(Highcharts);
   // Gantt = gantt(Highcharts);
   ErfolgsmessungService;
 
@@ -71,6 +73,10 @@ export class ErfolgsmessungComponent implements OnInit {
           series: [{
             type: 'column',
             name: 'FK',
+            tooltip: {
+              useHTML: true,
+              pointFormat: '<b>FK</b>  -  Jahresziel zu <b>{point.x}%</b> erreicht.'
+            },
             data: [data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9], data[10], data[11]]
           }, {
             type: 'column',
@@ -111,9 +117,13 @@ export class ErfolgsmessungComponent implements OnInit {
             },
             name: 'FK Jahresziel',
             data: [{
-              name: '13%',
-              y: 13,
+              name: data[72] + '%',
+              y: data[72],
               color: Highcharts.getOptions().colors[0] // Jane's color
+            }, {
+              name: ' ',
+              y: 100 - data[72],
+              color: Highcharts.getOptions().colors[5] // Jane's color
             }],
             center: [30, 30],
             size: 60,
@@ -139,9 +149,13 @@ export class ErfolgsmessungComponent implements OnInit {
               },
               name: 'PB Jahresziel',
               data: [{
-                name: '13%',
-                y: 13,
+                name: data[73] + '%',
+                y: data[73],
                 color: Highcharts.getOptions().colors[1] // Jane's color
+              }, {
+                name: ' ',
+                y: 100 - data[73],
+                color: Highcharts.getOptions().colors[5] // Jane's color
               }],
               center: [115, 30],
               size: 60,
@@ -167,9 +181,13 @@ export class ErfolgsmessungComponent implements OnInit {
               },
               name: 'PK Jahresziel',
               data: [{
-                name: '13%',
-                y: 13,
+                name: data[74] + '%',
+                y: data[74],
                 color: Highcharts.getOptions().colors[2] // Jane's color
+              }, {
+                name: ' ',
+                y: 100 - data[74],
+                color: Highcharts.getOptions().colors[5] // Jane's color
               }],
               center: [200, 30],
               size: 60,

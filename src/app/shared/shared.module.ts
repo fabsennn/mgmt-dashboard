@@ -32,6 +32,7 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { TasksComponent } from './widgets/tasks/tasks.component';
 import {MatSelectModule} from '@angular/material/select';
+import { Erfolgsmessung2Component } from './widgets/erfolgsmessung2/erfolgsmessung2.component';
 
 
 @NgModule({
@@ -50,7 +51,8 @@ import {MatSelectModule} from '@angular/material/select';
     BubblePotentialComponent,
     KundeninfoComponent,
     DrilldownComponent,
-    TasksComponent
+    TasksComponent,
+    Erfolgsmessung2Component
   ],
     imports: [
         CommonModule,
@@ -81,6 +83,7 @@ import {MatSelectModule} from '@angular/material/select';
     CardComponent,
     ProduktnutzungComponent,
     ErfolgsmessungComponent,
+    Erfolgsmessung2Component,
     NewsCardComponent,
     TodoTableComponent,
     DonutComponent,
