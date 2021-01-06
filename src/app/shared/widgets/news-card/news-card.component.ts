@@ -85,8 +85,9 @@ export class NewsCardComponent implements OnInit {
         this.iterator();
       });
   }
+/*<button mat-menu-item (click)="refreshNews()"*/
 
-  refreshNews() {
+  /*refreshNews() {
     this.reloadNewsfeed.emit();
     setTimeout(() => {
       window.dispatchEvent(
@@ -94,5 +95,5 @@ export class NewsCardComponent implements OnInit {
       );
     }, 300);
     this.ngOnInit();
-  }
+  }*/
 }

@@ -12,13 +12,17 @@
       <mat-icon>settings</mat-icon>
     </button>
     <mat-menu #menu="matMenu">
-      <button mat-menu-item (click)="refreshNews()">
-        <mat-icon>refresh</mat-icon>
-        Neu laden
+      <button mat-menu-item>
+        <mat-icon>date_range</mat-icon>
+        Sortieren: Älteste News
       </button>
       <button mat-menu-item>
-        <mat-icon>clear</mat-icon>
-        Alle entfernen
+        <mat-icon>date_range</mat-icon>
+       Sortieren: Neueste News
+      </button>
+      <button mat-menu-item>
+        <mat-icon>assignment_late</mat-icon>
+        Sortieren: Dringlichkeit
       </button>
     </mat-menu>
   </div>
@@ -43,3 +47,4 @@
   </mat-paginator>
 
 </div>
+

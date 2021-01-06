@@ -10,6 +10,6 @@ export class NewsCardService {
   constructor(private httpClient: HttpClient) { }
 
   public getNewsbyBeratername(beratername) {
-    return this.httpClient.get(`http://localhost:8080/news/newsbyberatername/${beratername}`);
+    return this.httpClient.get(`http://localhost:8080/news/newsbyberaternamedringlichkeit/${beratername}`);
   }
 }
