@@ -36,9 +36,10 @@ export class NewsCardComponent implements OnInit {
 
   @Input() news: News;
   mySubscription: any;
+  public auswahl: number;
 
   ngOnInit() {
-    this.getArray();
+    this.getArray(1);
     this.yournews.paginator = this.paginator;
     this.refresh();
   }
@@ -59,41 +60,82 @@ export class NewsCardComponent implements OnInit {
     this.yournews = part;
   }
 
-  private getArray() {
-    this.newscardService.getNewsbyBeratername('Max Mustermann')
-      .subscribe((data) => {
-        this.yournews = data;
-        this.yournews.paginator = this.paginator;
-        this.paginator._intl.itemsPerPageLabel = 'Einträge pro Seite';
-        this.paginator._intl.nextPageLabel = 'Nächste Seite';
-        this.paginator._intl.previousPageLabel = 'Vorherige Seite';
-        this.paginator._intl.getRangeLabel = (page: number, pageSize: number, length: number): string => {
-          const of = this.translate ? this.translate.instant('mat-paginator-intl.of') : 'von';
-          if (length === 0 || pageSize === 0) {
-            return '0 ' + of + ' ' + length;
-          }
-          length = Math.max(length, 0);
-          const startIndex = ((page * pageSize) > length) ?
-            (Math.ceil(length / pageSize) - 1) * pageSize :
-            page * pageSize;
+  private getArray(counter: number) {
+    if (counter === 1) {
+      this.newscardService.getNewsbyBeraternameAufsteigend('Max Mustermann')
+        .subscribe((data) => {
+          this.yournews = data;
+          this.yournews.paginator = this.paginator;
+          this.paginator._intl.itemsPerPageLabel = 'Einträge pro Seite';
+          this.paginator._intl.nextPageLabel = 'Nächste Seite';
+          this.paginator._intl.previousPageLabel = 'Vorherige Seite';
+          this.paginator._intl.getRangeLabel = (page: number, pageSize: number, length: number): string => {
+            const of = this.translate ? this.translate.instant('mat-paginator-intl.of') : 'von';
+            if (length === 0 || pageSize === 0) {
+              return '0 ' + of + ' ' + length;
+            }
+            length = Math.max(length, 0);
+            const startIndex = ((page * pageSize) > length) ?
+              (Math.ceil(length / pageSize) - 1) * pageSize :
+              page * pageSize;
 
-          const endIndex = Math.min(startIndex + pageSize, length);
-          return startIndex + 1 + ' - ' + endIndex + ' ' + of + ' ' + length;
-        };
-        this.newsarray = data;
-        this.totalSize = this.newsarray.length;
-        this.iterator();
-      });
+            const endIndex = Math.min(startIndex + pageSize, length);
+            return startIndex + 1 + ' - ' + endIndex + ' ' + of + ' ' + length;
+          };
+          this.newsarray = data;
+          this.totalSize = this.newsarray.length;
+          this.iterator();
+        });
+    } else if (counter === 2) {
+      this.newscardService.getNewsbyBeraternameAbsteigend('Max Mustermann')
+        .subscribe((data) => {
+          this.yournews = data;
+          this.yournews.paginator = this.paginator;
+          this.paginator._intl.itemsPerPageLabel = 'Einträge pro Seite';
+          this.paginator._intl.nextPageLabel = 'Nächste Seite';
+          this.paginator._intl.previousPageLabel = 'Vorherige Seite';
+          this.paginator._intl.getRangeLabel = (page: number, pageSize: number, length: number): string => {
+            const of = this.translate ? this.translate.instant('mat-paginator-intl.of') : 'von';
+            if (length === 0 || pageSize === 0) {
+              return '0 ' + of + ' ' + length;
+            }
+            length = Math.max(length, 0);
+            const startIndex = ((page * pageSize) > length) ?
+              (Math.ceil(length / pageSize) - 1) * pageSize :
+              page * pageSize;
+
+            const endIndex = Math.min(startIndex + pageSize, length);
+            return startIndex + 1 + ' - ' + endIndex + ' ' + of + ' ' + length;
+          };
+          this.newsarray = data;
+          this.totalSize = this.newsarray.length;
+          this.iterator();
+        });
+    } else if (counter === 3) {
+        this.newscardService.getNewsbyBeraternameDringlichkeit('Max Mustermann')
+          .subscribe((data) => {
+            this.yournews = data;
+            this.yournews.paginator = this.paginator;
+            this.paginator._intl.itemsPerPageLabel = 'Einträge pro Seite';
+            this.paginator._intl.nextPageLabel = 'Nächste Seite';
+            this.paginator._intl.previousPageLabel = 'Vorherige Seite';
+            this.paginator._intl.getRangeLabel = (page: number, pageSize: number, length: number): string => {
+              const of = this.translate ? this.translate.instant('mat-paginator-intl.of') : 'von';
+              if (length === 0 || pageSize === 0) {
+                return '0 ' + of + ' ' + length;
+              }
+              length = Math.max(length, 0);
+              const startIndex = ((page * pageSize) > length) ?
+                (Math.ceil(length / pageSize) - 1) * pageSize :
+                page * pageSize;
+
+              const endIndex = Math.min(startIndex + pageSize, length);
+              return startIndex + 1 + ' - ' + endIndex + ' ' + of + ' ' + length;
+            };
+            this.newsarray = data;
+            this.totalSize = this.newsarray.length;
+            this.iterator();
+          });
+    }
   }
-/*<button mat-menu-item (click)="refreshNews()"*/
-
-  /*refreshNews() {
-    this.reloadNewsfeed.emit();
-    setTimeout(() => {
-      window.dispatchEvent(
-        new Event('reload')
-      );
-    }, 300);
-    this.ngOnInit();
-  }*/
 }
