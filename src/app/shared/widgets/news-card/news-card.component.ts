@@ -35,13 +35,20 @@ export class NewsCardComponent implements OnInit {
   translate: TranslateService;
 
   @Input() news: News;
-  mySubscription: any;
   public auswahl: number;
+  private auswahlgetroffen = false;
 
   ngOnInit() {
-    this.getArray(1);
-    this.yournews.paginator = this.paginator;
+    this.pruefeauswahl(this.auswahlgetroffen, this.auswahl);
+    /*this.getArray(counter);*/
+    /*this.yournews.paginator = this.paginator;*/
     this.refresh();
+  }
+
+  public pruefeauswahl(auswahlgetroffen: boolean, zahl: number) { if (auswahlgetroffen === true) {
+    this.getArray(zahl);
+    this.yournews.paginator = this.paginator;
+  } else {this.getArray(1); this.yournews.paginator = this.paginator; }
   }
 
   public refresh() {
