@@ -27,11 +27,11 @@
 </mat-form-field>
 
     <div>
-      <input type="file" id="datei" [(ngModel)]="datei">
+      <input type="file" [(ngModel)]="datei" (change)="onFileChange($event)">
     </div> <br>
 
   <section>
-    <button mat-raised-button color="primary" (click)="postData()" onclick="location.reload()">Senden</button>
+    <button mat-raised-button color="primary" (click)="postData()"> <!-- onclick="location.reload()">-->Senden</button>
   </section>
   </div>
 
