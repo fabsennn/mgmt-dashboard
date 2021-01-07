@@ -1,7 +1,6 @@
 import { Component, OnInit} from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 
-
 @Component({
   selector: 'app-tasks',
   templateUrl: './tasks.component.html',
@@ -12,15 +11,23 @@ export class TasksComponent implements OnInit {
   berater: string;
   dringlichkeit: string;
   datum = new Date().toISOString().slice(0, 10);
+  datei = new File([''], '');
   constructor(private http: HttpClient) {}
   ngOnInit() {}
 
   postData() {
-     const url = `http://localhost:8080/news/${this.news}/${this.berater}/${this.dringlichkeit}/${this.datum}`;
-     this.http.post(url, {
+    let url;
+    if (this.datei.size < 1) {
+      url = `http://localhost:8080/news/${this.news}/${this.berater}/${this.dringlichkeit}/${this.datum}`;
+    } else {
+      url = `http://localhost:8080/news/${this.news}/${this.berater}/${this.dringlichkeit}/${this.datum}/${this.datei}`;
+    }
+
+    this.http.post(url, {
       news: this.news,
       berater: this.berater,
-      dringlichkeit: this.dringlichkeit
+      dringlichkeit: this.dringlichkeit,
+       datei: this.datei
     }).toPromise().then((data: any) => {
       console.log(data);
     });

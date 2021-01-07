@@ -26,8 +26,13 @@
   </mat-select>
 </mat-form-field>
 
+    <div>
+      <input type="file" id="datei" [(ngModel)]="datei">
+    </div> <br>
+
   <section>
     <button mat-raised-button color="primary" (click)="postData()" onclick="location.reload()">Senden</button>
   </section>
   </div>
+
 </mat-card-content>
