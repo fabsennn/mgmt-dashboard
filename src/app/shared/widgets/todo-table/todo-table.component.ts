@@ -1,3 +1,7 @@
+/*
+ * Diese Komponente beinhaltet die Tabelle mit den ausstehenden Gesprächen
+ */
+
 import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
 import {TodoTableService} from './Service/todo-table.service';
 import * as Highcharts from 'highcharts';
@@ -21,6 +25,8 @@ export class TodoTableComponent implements OnInit {
   public array: any;
   // tslint:disable-next-line:ban-types
   todos: any = new MatTableDataSource();
+
+  // Variablen für die Pagination, insb. Elemente pro Seite mit "pageSize"
   public pageSize = 3;
   public currentPage = 0;
   public totalSize = 0;
@@ -49,6 +55,10 @@ export class TodoTableComponent implements OnInit {
     this.iterator();
   }
 
+  /*
+  REST call für alle ausstehenden Aufgaben,
+  sowie Übersetzungen der Beschriftungen.
+   */
   private getArray() {
     this.todotableService.getTodos('88')
       .subscribe((data) => {
@@ -76,6 +86,7 @@ export class TodoTableComponent implements OnInit {
       });
   }
 
+  // Teil der Pagination
   private iterator() {
     const end = (this.currentPage + 1) * this.pageSize;
     const start = this.currentPage * this.pageSize;
@@ -83,6 +94,7 @@ export class TodoTableComponent implements OnInit {
     this.todos = part;
   }
 
+  // Funktion für das Aktualisieren der Aufgaben
   refreshToDoCard() {
     this.reloadTodos.emit();
     setTimeout(() => {
