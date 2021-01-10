@@ -18,14 +18,17 @@ export class GespraechsTableService {
     return this.httpClient.get(`http://localhost:8080/gespraeche`);
   }
 
+  // Alle Gespräche eines Beraters
   public getGespraecheBerater(beraterID) {
     return this.httpClient.get(`http://localhost:8080/gespraeche/berater/${beraterID}`);
   }
 
+  // Alle ausstehenden Gespräche eines Beraters
   public getPlanGespraecheBerater(beraterID) {
     return this.httpClient.get(`http://localhost:8080/gespraeche/berater/${beraterID}/plan`);
   }
 
+  // [unvollständig] Soll ein bestimmtes Gespräch von 'Plan' auf 'ist' setzen
   public setGespraechToIst(gespraechID) {
    // Gespraechsplanung g = new Gespraechsplanung();
    return this.httpClient.patch(`http://localhost:8080/gespraeche/ist/${gespraechID}`, {} );

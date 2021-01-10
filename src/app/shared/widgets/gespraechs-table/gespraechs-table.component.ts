@@ -1,3 +1,7 @@
+/*
+Komponente, die die ausstehenden Gespräche beinhaltet.
+ */
+
 import {Component, Input, OnInit, ViewChild} from '@angular/core';
 import {MatPaginator, MatTableDataSource, MatSort, PageEvent, MatButtonModule} from '@angular/material';
 import {GespraechsTableService} from './Service/gespraechs-table.service';
@@ -23,9 +27,11 @@ export class Gespraechsplanung {
 export class GespraechsTableComponent implements OnInit {
 
   public array: any;
+  // Die angezeigten Spalten der Tabelle. Actions ist noch funktionslos und ließe sich durch entfernen an dieser Stelle auch im Frontend ausblenden
   public displayedColumns = ['Kundennummer', 'Kategorie', 'Thema', 'Nächste Fälligkeit', 'actions'];
   // tslint:disable-next-line:ban-types
   dataSource: any = new MatTableDataSource();
+// Einstellungen für die seitenweise Darstellung
   public pageSize = 5;
   public currentPage = 0;
   public totalSize = 0;
@@ -51,12 +57,14 @@ export class GespraechsTableComponent implements OnInit {
     this.gespraechstableService.setGespraechToIst(element);
   }
 
+  // Teil der pagination
   public handlePage(e: any) {
     this.currentPage = e.pageIndex;
     this.pageSize = e.pageSize;
     this.iterator();
   }
 
+  // Initialisierung und Übersetzung. REST Call requested alle ausstehenden Gespräche eines (hardgecodeten) Beraters.
   private getArray() {
     this.gespraechstableService.getPlanGespraecheBerater('88')
       .subscribe((data) => {
@@ -73,6 +81,7 @@ export class GespraechsTableComponent implements OnInit {
       });
   }
 
+// Teil der pagination
   private iterator() {
     const end = (this.currentPage + 1) * this.pageSize;
     const start = this.currentPage * this.pageSize;
