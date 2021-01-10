@@ -9,7 +9,7 @@ describe('ErfolgsmessungComponent', () => {
     TestBed.configureTestingModule({
       declarations: [ ErfolgsmessungComponent ]
     })
-    .compileComponents();
+      .compileComponents();
   }));
 
   beforeEach(() => {
