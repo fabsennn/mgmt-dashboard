@@ -33,6 +33,8 @@ import { HighchartsChartModule } from 'highcharts-angular';
 import { TasksComponent } from './widgets/tasks/tasks.component';
 import {MatSelectModule} from '@angular/material/select';
 import { Erfolgsmessung2Component } from './widgets/erfolgsmessung2/erfolgsmessung2.component';
+import { Erfolgsmessung3Component } from './widgets/erfolgsmessung3/erfolgsmessung3.component';
+import { Erfolgsmessung4Component } from './widgets/erfolgsmessung4/erfolgsmessung4.component';
 
 
 @NgModule({
@@ -52,7 +54,9 @@ import { Erfolgsmessung2Component } from './widgets/erfolgsmessung2/erfolgsmessu
     KundeninfoComponent,
     DrilldownComponent,
     TasksComponent,
-    Erfolgsmessung2Component
+    Erfolgsmessung2Component,
+    Erfolgsmessung3Component,
+    Erfolgsmessung4Component
   ],
   imports: [
     CommonModule,
@@ -84,6 +88,8 @@ import { Erfolgsmessung2Component } from './widgets/erfolgsmessung2/erfolgsmessu
     ProduktnutzungComponent,
     ErfolgsmessungComponent,
     Erfolgsmessung2Component,
+    Erfolgsmessung3Component,
+    Erfolgsmessung4Component,
     NewsCardComponent,
     TodoTableComponent,
     DonutComponent,
