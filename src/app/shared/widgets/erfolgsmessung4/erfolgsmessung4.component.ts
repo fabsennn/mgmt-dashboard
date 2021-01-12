@@ -39,7 +39,17 @@ export class Erfolgsmessung4Component implements OnInit {
             marginBottom: 80,
             plotBorderWidth: 1
           },
-
+          lang: {
+            printChart: 'Drucken',
+            viewFullscreen: 'Vollbildmodus',
+            downloadPNG: 'Download als PNG',
+            downloadPDF: 'Download als PDF',
+            downloadJPEG: 'Download als JPEG',
+            downloadSVG: 'Download als SVG'
+          },
+          credits: {
+            enabled: false
+          },
 
           title: {
             text: 'Erfolgsmessung II - Zielerreichung Zeitanteil PK'
@@ -75,10 +85,8 @@ export class Erfolgsmessung4Component implements OnInit {
           colorAxis: {
             min: 0,
             max: 100,
-            // minColor: '#FFFFFF',
-            minColor: '#a62121',
-            // maxColor: Highcharts.getOptions().colors[2]
-            maxColor: '#24abff'
+            minColor: '#BABABA',
+            maxColor: '#90EE90'
           },
 
           legend: {
