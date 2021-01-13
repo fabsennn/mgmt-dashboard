@@ -35,6 +35,7 @@ import {MatSelectModule} from '@angular/material/select';
 import { Erfolgsmessung2Component } from './widgets/erfolgsmessung2/erfolgsmessung2.component';
 import { Erfolgsmessung3Component } from './widgets/erfolgsmessung3/erfolgsmessung3.component';
 import { Erfolgsmessung4Component } from './widgets/erfolgsmessung4/erfolgsmessung4.component';
+import { ErfolgsmessungKreisComponent } from './widgets/erfolgsmessung-kreis/erfolgsmessung-kreis.component';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { Erfolgsmessung4Component } from './widgets/erfolgsmessung4/erfolgsmessu
     TasksComponent,
     Erfolgsmessung2Component,
     Erfolgsmessung3Component,
-    Erfolgsmessung4Component
+    Erfolgsmessung4Component,
+    ErfolgsmessungKreisComponent
   ],
   imports: [
     CommonModule,
@@ -90,6 +92,7 @@ import { Erfolgsmessung4Component } from './widgets/erfolgsmessung4/erfolgsmessu
     Erfolgsmessung2Component,
     Erfolgsmessung3Component,
     Erfolgsmessung4Component,
+    ErfolgsmessungKreisComponent,
     NewsCardComponent,
     TodoTableComponent,
     DonutComponent,

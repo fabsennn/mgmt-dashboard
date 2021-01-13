@@ -57,7 +57,7 @@ export class ErfolgsmessungComponent implements OnInit {
             categories: ['Januar', 'Februar', 'März', 'April',
               'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember']
           },
-          labels: {
+          /* labels: {
             items: [{
               html: 'Zielerreichung Jahr',
               style: {
@@ -69,14 +69,10 @@ export class ErfolgsmessungComponent implements OnInit {
                 ) || 'black'
               }
             }]
-          },
+          }, */
           series: [{
             type: 'column',
             name: 'FK',
-            tooltip: {
-              useHTML: true,
-              pointFormat: '<b>FK</b>  -  Jahresziel zu <b>{point.x}%</b> erreicht.'
-            },
             data: [data[0], data[1], data[2], data[3], data[4], data[5], data[6], data[7], data[8], data[9], data[10], data[11]]
           }, {
             type: 'column',
@@ -108,7 +104,7 @@ export class ErfolgsmessungComponent implements OnInit {
               lineColor: 'lightgreen',
               fillColor: 'white'
             }
-          }, {
+          } /*, {
             type: 'pie',
             title: {
               text: 'FK'
@@ -203,7 +199,7 @@ export class ErfolgsmessungComponent implements OnInit {
                   fontSize: '20px'
                 }
               }
-            }]
+            }*/]
         };
       });
     HC_exporting(Highcharts);

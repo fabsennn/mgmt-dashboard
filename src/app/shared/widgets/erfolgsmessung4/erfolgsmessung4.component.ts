@@ -56,11 +56,11 @@ export class Erfolgsmessung4Component implements OnInit {
           },
 
           xAxis: {
-            categories: ['Baufischutz', 'Bauspargeschäft', 'DekaBankDepots', 'Depotgebühren', 'Gold pro Aurum',
-              'Immobilienvermittlung mit Kunden', 'Jugendgirokonten', 'Krankenvers.-Ertrag', 'Kreditkarten', 'Kreditschutz',
-              'Kundeneinwilligungen', 'Lebensversicherungen', 'Liquiditätspauschale', 'Neukundenakquise',
-              'Sachversicherungen Abschlussprovision', 'SCARD Plus', 'Strategiegespräche', 'Themenpläne', 'Zins- und Währungsmanagement',
-              'Zinskonditionsbeitrag Aktiv']
+            categories: ['Baufischutz', 'Bausparge.', 'Deka-B', 'Depotgebü.', 'Gold p. Aurum',
+              'Immo.verm.', 'Jugendgiro', 'Kr.Vers.-Ertrag', 'Kreditkarten', 'Kreditschutz',
+              'DSGVO', 'L.Versicherung', 'Liqui.pausch.', 'Neukundenakq.',
+              'SV Provision', 'SCARD Plus', 'Strategieges', 'Themenpläne', 'ZWM',
+              'ZKB Aktiv']
           },
 
           yAxis: {
@@ -83,6 +83,9 @@ export class Erfolgsmessung4Component implements OnInit {
           },*/
 
           colorAxis: {
+            labels: {
+              format: '{value}%'
+            },
             min: 0,
             max: 100,
             minColor: '#BABABA',
