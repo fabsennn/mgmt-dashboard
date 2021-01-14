@@ -30,6 +30,10 @@ export class BubblePotentialComponent implements OnInit {
   constructor(private BubblepotentialService: BubblePotentialService) {
   }
 
+  /**
+   * REST-call aus der H2 DB sowie Übersetzungen und Highcharts parameter
+   * Berater noch hardcoded!
+   */
   ngOnInit() {
     this.BubblepotentialService.getAllPotenzial('7230018').subscribe((data) => {
         this.arrayALL = data;

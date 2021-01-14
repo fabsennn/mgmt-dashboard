@@ -26,6 +26,9 @@ export class ErfolgsmessungKreisComponent implements OnInit {
 
   constructor(private erfolgsmessungKreisService: ErfolgsmessungKreisService) { }
 
+  /**
+   * REST-Call für die Daten aus der H2 DB, sowie Übersetzungen und Highcharts-Parameter
+   */
   ngOnInit() {
     this.erfolgsmessungKreisService.getEntwicklung_zielerfuellung()
       .pipe(take(1))

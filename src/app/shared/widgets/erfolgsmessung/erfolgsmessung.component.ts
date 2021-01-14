@@ -26,6 +26,9 @@ export class ErfolgsmessungComponent implements OnInit {
 
   constructor(private erfolgsmessungService: ErfolgsmessungService) { }
 
+  /**
+   * REST-call aus der H2 DB sowie Übersetzungen und Highcharts parameter
+   */
   ngOnInit() {
     this.erfolgsmessungService.getEntwicklung_zielerfuellung()
       .pipe(take(1))

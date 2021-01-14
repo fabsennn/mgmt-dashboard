@@ -23,9 +23,11 @@ export class DonutComponent implements OnInit {
 
   constructor(private donutService: DonutService) { }
 
-
+  /**
+   * REST-call aus der H2 DB sowie Übersetzungen und Highcharts parameter
+   * Berater ist noch hardcoded!
+   */
   ngOnInit() {
-
     this.donutService.getGespraechePlanIstBerater(88)
       .pipe(take(1))
       .subscribe ((data: number[]) => {
