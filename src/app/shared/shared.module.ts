@@ -15,17 +15,13 @@ import { RouterModule } from '@angular/router';
 import { HeaderComponent } from './components/header/header.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
-import { AreaComponent } from './widgets/area/area.component';
 import { BubblePotentialComponent } from './widgets/bubble-potential/bubble-potential.component';
-import { CardComponent } from './widgets/card/card.component';
 import { ProduktnutzungComponent } from './widgets/produktnutzung/produktnutzung.component';
 import { ErfolgsmessungComponent } from './widgets/erfolgsmessung/erfolgsmessung.component';
 import { DonutComponent } from './widgets/donut/donut.component';
 import { NewsCardComponent } from './widgets/news-card/news-card.component';
 import { TodoTableComponent } from './widgets/todo-table/todo-table.component';
-import { DrilldownComponent } from './widgets/drilldown/drilldown.component';
 import { GespraechsTableComponent } from './widgets/gespraechs-table/gespraechs-table.component';
-import {KundeninfoComponent} from './widgets/kundeninfo/kundeninfo.component';
 import {MatInputModule} from '@angular/material/input';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 
@@ -39,8 +35,6 @@ import {MatSelectModule} from '@angular/material/select';
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
-    AreaComponent,
-    CardComponent,
     ProduktnutzungComponent,
     DonutComponent,
     ErfolgsmessungComponent,
@@ -48,8 +42,6 @@ import {MatSelectModule} from '@angular/material/select';
     TodoTableComponent,
     GespraechsTableComponent,
     BubblePotentialComponent,
-    KundeninfoComponent,
-    DrilldownComponent,
     TasksComponent
   ],
     imports: [
@@ -77,8 +69,6 @@ import {MatSelectModule} from '@angular/material/select';
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
-    AreaComponent,
-    CardComponent,
     ProduktnutzungComponent,
     ErfolgsmessungComponent,
     NewsCardComponent,
@@ -86,8 +76,6 @@ import {MatSelectModule} from '@angular/material/select';
     DonutComponent,
     GespraechsTableComponent,
     BubblePotentialComponent,
-    KundeninfoComponent,
-    DrilldownComponent,
     TasksComponent,
     MatSortModule
   ]
