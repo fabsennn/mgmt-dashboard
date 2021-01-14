@@ -60,7 +60,7 @@ export class ProduktnutzungComponent implements OnInit {
               }
             },
             tooltip: {
-              valueSuffix: '<b>{point.name}</b> Verbünde: <b>{point.value}</b>'
+              valueSuffix: '<b>{point.name}</b>'
             },
             plotOptions: {
               bar: {
@@ -72,7 +72,7 @@ export class ProduktnutzungComponent implements OnInit {
             series: [{
               name: data[2]["merkmal"],
               value: 10,
-              color: 'lightgreen',
+              color: 'orange',
               data: [data[2]["krankenVersicherung"], data[2]["sachVersicherung"], data[2]["kfzVersicherung"], data[2]["unfallVersicherung"]]
             }, {
               name: data[1]["merkmal"],

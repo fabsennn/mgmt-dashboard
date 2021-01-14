@@ -3,6 +3,7 @@ import * as Highcharts from 'highcharts';
 import HC_exporting from 'highcharts/modules/exporting';
 import drilldown from 'highcharts/modules/drilldown.js';
 import xrange from 'highcharts/modules/xrange.js';
+import heatmap from 'highcharts/modules/heatmap.js';
 import gantt from 'highcharts/modules/gantt.js';
 import { ganttChart } from 'highcharts';
 import {take} from 'rxjs/operators';
@@ -19,6 +20,7 @@ export class ErfolgsmessungComponent implements OnInit {
   chartOptions: any = null;
   drilldown = drilldown(Highcharts);
   xrange = xrange(Highcharts);
+  heatmap = heatmap(Highcharts);
   // Gantt = gantt(Highcharts);
   ErfolgsmessungService;
 
@@ -55,7 +57,7 @@ export class ErfolgsmessungComponent implements OnInit {
             categories: ['Januar', 'Februar', 'März', 'April',
               'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember']
           },
-          labels: {
+          /* labels: {
             items: [{
               html: 'Zielerreichung Jahr',
               style: {
@@ -67,7 +69,7 @@ export class ErfolgsmessungComponent implements OnInit {
                 ) || 'black'
               }
             }]
-          },
+          }, */
           series: [{
             type: 'column',
             name: 'FK',
@@ -79,10 +81,12 @@ export class ErfolgsmessungComponent implements OnInit {
           }, {
             type: 'column',
             name: 'PK',
+            color: Highcharts.getOptions().colors[3],
             data: [data[24], data[25], data[26], data[27], data[28], data[29], data[30], data[31], data[32], data[33], data[34], data[35]]
           }, {
             type: 'spline',
             name: 'Durchschnitt',
+            color: 'lightgreen',
             data: [(data[0] + data[12] + data[24]) / 3,
               (data[1] + data[13] + data[25]) / 3,
               (data[2] + data[14] + data[26]) / 3,
@@ -97,10 +101,10 @@ export class ErfolgsmessungComponent implements OnInit {
               (data[11] + data[23] + data[35]) / 3],
             marker: {
               lineWidth: 2,
-              lineColor: Highcharts.getOptions().colors[3],
+              lineColor: 'lightgreen',
               fillColor: 'white'
             }
-          }, {
+          } /*, {
             type: 'pie',
             title: {
               text: 'FK'
@@ -111,9 +115,13 @@ export class ErfolgsmessungComponent implements OnInit {
             },
             name: 'FK Jahresziel',
             data: [{
-              name: '13%',
-              y: 13,
-              color: Highcharts.getOptions().colors[0] // Jane's color
+              name: data[72] + '%',
+              y: data[72],
+              color: Highcharts.getOptions().colors[0]
+            }, {
+              name: ' ',
+              y: 100 - data[72],
+              color: 'grey'
             }],
             center: [30, 30],
             size: 60,
@@ -139,9 +147,13 @@ export class ErfolgsmessungComponent implements OnInit {
               },
               name: 'PB Jahresziel',
               data: [{
-                name: '13%',
-                y: 13,
-                color: Highcharts.getOptions().colors[1] // Jane's color
+                name: data[73] + '%',
+                y: data[73],
+                color: Highcharts.getOptions().colors[1]
+              }, {
+                name: ' ',
+                y: 100 - data[73],
+                color: 'grey'
               }],
               center: [115, 30],
               size: 60,
@@ -167,9 +179,13 @@ export class ErfolgsmessungComponent implements OnInit {
               },
               name: 'PK Jahresziel',
               data: [{
-                name: '13%',
-                y: 13,
-                color: Highcharts.getOptions().colors[2] // Jane's color
+                name: data[74] + '%',
+                y: data[74],
+                color: Highcharts.getOptions().colors[3]
+              }, {
+                name: ' ',
+                y: 100 - data[74],
+                color: 'grey'
               }],
               center: [200, 30],
               size: 60,
@@ -183,7 +199,7 @@ export class ErfolgsmessungComponent implements OnInit {
                   fontSize: '20px'
                 }
               }
-            }]
+            }*/]
         };
       });
     HC_exporting(Highcharts);

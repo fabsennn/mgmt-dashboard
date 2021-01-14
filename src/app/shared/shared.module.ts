@@ -28,6 +28,10 @@ import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { TasksComponent } from './widgets/tasks/tasks.component';
 import {MatSelectModule} from '@angular/material/select';
+import { Erfolgsmessung2Component } from './widgets/erfolgsmessung2/erfolgsmessung2.component';
+import { Erfolgsmessung3Component } from './widgets/erfolgsmessung3/erfolgsmessung3.component';
+import { Erfolgsmessung4Component } from './widgets/erfolgsmessung4/erfolgsmessung4.component';
+import { ErfolgsmessungKreisComponent } from './widgets/erfolgsmessung-kreis/erfolgsmessung-kreis.component';
 
 
 @NgModule({
@@ -42,35 +46,43 @@ import {MatSelectModule} from '@angular/material/select';
     TodoTableComponent,
     GespraechsTableComponent,
     BubblePotentialComponent,
-    TasksComponent
+    TasksComponent,
+    Erfolgsmessung2Component,
+    Erfolgsmessung3Component,
+    Erfolgsmessung4Component,
+    ErfolgsmessungKreisComponent
   ],
-    imports: [
-        CommonModule,
-        MatDividerModule,
-        MatToolbarModule,
-        MatIconModule,
-        MatButtonModule,
-        FlexLayoutModule,
-        MatMenuModule,
-        MatListModule,
-        RouterModule,
-        HighchartsChartModule,
-        MatCardModule,
-        MatProgressSpinnerModule,
-        MatTableModule,
-        MatPaginatorModule,
-        MatInputModule,
-        ReactiveFormsModule,
-        MatSelectModule,
-        FormsModule,
-        MatSortModule
-    ],
+  imports: [
+    CommonModule,
+    MatDividerModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    FlexLayoutModule,
+    MatMenuModule,
+    MatListModule,
+    RouterModule,
+    HighchartsChartModule,
+    MatCardModule,
+    MatProgressSpinnerModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatInputModule,
+    ReactiveFormsModule,
+    MatSelectModule,
+    FormsModule,
+    MatSortModule
+  ],
   exports: [
     HeaderComponent,
     FooterComponent,
     SidebarComponent,
     ProduktnutzungComponent,
     ErfolgsmessungComponent,
+    Erfolgsmessung2Component,
+    Erfolgsmessung3Component,
+    Erfolgsmessung4Component,
+    ErfolgsmessungKreisComponent,
     NewsCardComponent,
     TodoTableComponent,
     DonutComponent,
