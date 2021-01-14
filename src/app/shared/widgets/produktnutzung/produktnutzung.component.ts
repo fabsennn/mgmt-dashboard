@@ -17,6 +17,10 @@ export class ProduktnutzungComponent implements OnInit {
 
   constructor(private produktNutzungService: ProduktNutzungService) { }
 
+  /**
+   * Füllt die Komponente mithilfe des REST-calls am Anfang der Funktion.
+   * Anschließend folgen Parameter für Highcharts sowie Übersetzungen für die Beschriftungen
+   */
   ngOnInit() {
     // this.filteredData = [];
     this.produktNutzungService.getAllProduktNutzungen()
