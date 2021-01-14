@@ -19,6 +19,9 @@ export class Gespraechsplanung {
   letzterKontakt: string;
 }
 
+/**
+ * Diese Klasse beinhaltet die Funktionalität des Modules.
+ */
 @Component({
   selector: 'app-gespraechs-table',
   templateUrl: './gespraechs-table.component.html',
@@ -28,7 +31,7 @@ export class GespraechsTableComponent implements OnInit {
 
   public array: any;
   // Die angezeigten Spalten der Tabelle. Actions ist noch funktionslos und ließe sich durch entfernen an dieser Stelle auch im Frontend ausblenden
-  public displayedColumns = ['Kundennummer', 'Kategorie', 'Thema', 'Nächste Fälligkeit', 'actions'];
+  public displayedColumns = ['Kundennummer', 'Kategorie', 'Thema', 'Nächste Fälligkeit']; // , 'actions'];
   // tslint:disable-next-line:ban-types
   dataSource: any = new MatTableDataSource();
 // Einstellungen für die seitenweise Darstellung
@@ -46,25 +49,37 @@ export class GespraechsTableComponent implements OnInit {
 
   constructor(private gespraechstableService: GespraechsTableService) { }
 
+  /**
+   * Initialisiert in getArray() die Daten und die Sortierfunktion sowieso Seitenweisedarstellung.
+   */
   ngOnInit() {
     this.getArray();
     this.dataSource.sort = this.sort;
     this.dataSource.paginator = this.paginator;
   }
 
+  /**
+   * Soll ein Gespräch per klick als "durchgeführt" markieren. funktioniert noch nicht.
+   * @param element Das Gespräch welches geändert werden soll.
+   */
   public alsIstMarkieren(element: any) {
     console.log('Element ID: ' + element);
     this.gespraechstableService.setGespraechToIst(element);
   }
 
-  // Teil der pagination
+  /** Teil der pagination
+   * @param e
+   */
   public handlePage(e: any) {
     this.currentPage = e.pageIndex;
     this.pageSize = e.pageSize;
     this.iterator();
   }
 
-  // Initialisierung und Übersetzung. REST Call requested alle ausstehenden Gespräche eines (hardgecodeten) Beraters.
+  /** Initialisierung und Übersetzung. REST Call requested alle ausstehenden Gespräche eines (hardgecodeten) Beraters.
+   * Vorsicht: hardcoded berater!
+   * @private
+   */
   private getArray() {
     this.gespraechstableService.getPlanGespraecheBerater('88')
       .subscribe((data) => {
@@ -81,7 +96,9 @@ export class GespraechsTableComponent implements OnInit {
       });
   }
 
-// Teil der pagination
+  /** Teil der pagination
+   * @private
+   */
   private iterator() {
     const end = (this.currentPage + 1) * this.pageSize;
     const start = this.currentPage * this.pageSize;

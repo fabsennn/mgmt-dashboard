@@ -15,7 +15,9 @@ export class TasksComponent implements OnInit {
   constructor(private http: HttpClient) {}
   ngOnInit() {}
 
-  // REST Post call für das abspeichern einer neuen Aufgabe
+  /** REST Post call für das abspeichern einer neuen Aufgabe
+   *
+   */
   postData() {
      const url = `http://localhost:8080/news/${this.news}/${this.berater}/${this.dringlichkeit}/${this.datum}`;
      this.http.post(url, {

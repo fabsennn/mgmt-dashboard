@@ -16,7 +16,9 @@ interface News {
   templateUrl: './news-card.component.html',
   styleUrls: ['./news-card.component.scss']
 })
-
+/**
+ * Diese Klasse beinhaltet die Funktionalität des Modules.
+ */
 export class NewsCardComponent implements OnInit {
 
   constructor(private newscardService: NewsCardService) { }
@@ -38,13 +40,21 @@ export class NewsCardComponent implements OnInit {
   public auswahl: number;
   private auswahlgetroffen = false;
 
+  /**
+   * Initialisiert sortierung und inhalt der Komponente
+   */
   ngOnInit() {
     this.pruefeauswahl(this.auswahlgetroffen, this.auswahl);
-    /*this.getArray(counter);*/
-    /*this.yournews.paginator = this.paginator;*/
     this.refresh();
   }
 
+  /**
+   * Requested die Daten abhängig von der ausgewählten Sortierung.
+   * Wenn nichts ausgewählt wurde wird die Standard-Sortierung aufgerufen, sonst die ausgewählte.
+   *
+   * @param auswahlgetroffen boolean ob standard oder geänderte sortierung benutzt werden soll
+   * @param zahl kennzahl für die Art der Sortierung
+   */
   public pruefeauswahl(auswahlgetroffen: boolean, zahl: number) { if (auswahlgetroffen === true) {
     this.getArray(zahl);
     this.yournews.paginator = this.paginator;
@@ -67,6 +77,11 @@ export class NewsCardComponent implements OnInit {
     this.yournews = part;
   }
 
+  /**
+   * REST-Call für alle Aufgaben, Sortierung abhängig vom Parameter.
+   * @param counter Gibt an welche Sortierung genommen werden soll. (1: DatumAufsteigend 2: Datum Absteigend 3: Dringlichkeit
+   * @private
+   */
   private getArray(counter: number) {
     if (counter === 1) {
       this.newscardService.getNewsbyBeraternameAufsteigend('Max Mustermann')

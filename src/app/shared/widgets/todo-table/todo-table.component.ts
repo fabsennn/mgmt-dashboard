@@ -1,5 +1,5 @@
-/*
- * Diese Komponente beinhaltet die Tabelle mit den ausstehenden Gesprächen
+/**
+ * Diese Komponente beinhaltet die Tabelle mit offenen Aufgaben.
  */
 
 import {Component, EventEmitter, Input, OnInit, Output, ViewChild} from '@angular/core';
@@ -14,6 +14,9 @@ interface Todo {
   naechsteFaelligkeit: string;
 }
 
+/**
+ * Diese Klasse beinhaltet die Funktionalität des Modules.
+ */
 @Component({
   selector: 'app-todo-table',
   templateUrl: './todo-table.component.html',
@@ -44,6 +47,9 @@ export class TodoTableComponent implements OnInit {
   constructor(private todotableService: TodoTableService) {
   }
 
+  /**
+   * Initialisiert das module.
+   */
   ngOnInit() {
     this.getArray();
     this.todos.paginator = this.paginator;
@@ -55,12 +61,14 @@ export class TodoTableComponent implements OnInit {
     this.iterator();
   }
 
-  /*
-  REST call für alle ausstehenden Aufgaben,
-  sowie Übersetzungen der Beschriftungen.
+
+  /**
+   * Requested per REST-Call die Daten vom Server.
+   * Außerdem werden die Beschriftungen übersetzt.
+   * @private
    */
   private getArray() {
-    this.todotableService.getTodos('88')
+    this.todotableService.getTodos('88') // noch hardcoded!
       .subscribe((data) => {
         this.todos = data;
         this.todos.paginator = this.paginator;
@@ -86,7 +94,9 @@ export class TodoTableComponent implements OnInit {
       });
   }
 
-  // Teil der Pagination
+  /**
+   * Teil der Pagination
+   */
   private iterator() {
     const end = (this.currentPage + 1) * this.pageSize;
     const start = this.currentPage * this.pageSize;
@@ -94,7 +104,9 @@ export class TodoTableComponent implements OnInit {
     this.todos = part;
   }
 
-  // Funktion für das Aktualisieren der Aufgaben
+  /**
+   * Funktion für das Aktualisieren der Aufgaben
+   */
   refreshToDoCard() {
     this.reloadTodos.emit();
     setTimeout(() => {
