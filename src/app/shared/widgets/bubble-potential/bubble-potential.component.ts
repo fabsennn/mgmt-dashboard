@@ -47,7 +47,7 @@ export class BubblePotentialComponent implements OnInit {
           },
           tooltip: {
             useHTML: true,
-            pointFormat: '<b>{point.name}</b>  -  Potential: {point.value}%'
+            pointFormat: '<b>{point.name}</b>  -  Potenzial: {point.value}%'
           },
           credits: {
             enabled: false
