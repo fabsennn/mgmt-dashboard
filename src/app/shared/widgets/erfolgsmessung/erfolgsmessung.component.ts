@@ -2,10 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import HC_exporting from 'highcharts/modules/exporting';
 import drilldown from 'highcharts/modules/drilldown.js';
-import xrange from 'highcharts/modules/xrange.js';
-import heatmap from 'highcharts/modules/heatmap.js';
-import gantt from 'highcharts/modules/gantt.js';
-import { ganttChart } from 'highcharts';
 import {take} from 'rxjs/operators';
 import {ErfolgsmessungService} from '../erfolgsmessung/Service/erfolgsmessung.service';
 
@@ -19,22 +15,14 @@ export class ErfolgsmessungComponent implements OnInit {
   Highcharts = Highcharts;
   chartOptions: any = null;
   drilldown = drilldown(Highcharts);
-  xrange = xrange(Highcharts);
-  heatmap = heatmap(Highcharts);
-  // Gantt = gantt(Highcharts);
   ErfolgsmessungService;
 
   constructor(private erfolgsmessungService: ErfolgsmessungService) { }
 
-  /**
-   * REST-call aus der H2 DB sowie Übersetzungen und Highcharts parameter
-   */
   ngOnInit() {
     this.erfolgsmessungService.getEntwicklung_zielerfuellung()
       .pipe(take(1))
       .subscribe ((data: number[]) => {
-        // this.ArrayAlles = data;
-        // @ts-ignore
         this.chartOptions = {
           lang: {
             // drillUpText: 'Zurück zur Jahresübersicht',
@@ -43,7 +31,7 @@ export class ErfolgsmessungComponent implements OnInit {
             downloadPNG: 'Download als PNG',
             downloadPDF: 'Download als PDF',
             downloadJPEG: 'Download als JPEG',
-            downloadSVG: 'Download als SVG'
+            downloadSVG: 'Download als SVG',
           },
           title: {
             text: 'Erfolgsmessung'
@@ -51,7 +39,8 @@ export class ErfolgsmessungComponent implements OnInit {
           yAxis: {
             title: {
               text: 'Absatz'
-            }
+            },
+            staticScale: 1000000,
           },
           credits: {
             enabled: false
@@ -60,7 +49,7 @@ export class ErfolgsmessungComponent implements OnInit {
             categories: ['Januar', 'Februar', 'März', 'April',
               'Mai', 'Juni', 'Juli', 'August', 'September', 'Oktober', 'November', 'Dezember']
           },
-          /* labels: {
+          labels: {
             items: [{
               html: 'Zielerreichung Jahr',
               style: {
@@ -72,7 +61,7 @@ export class ErfolgsmessungComponent implements OnInit {
                 ) || 'black'
               }
             }]
-          }, */
+          },
           series: [{
             type: 'column',
             name: 'FK',
@@ -107,7 +96,7 @@ export class ErfolgsmessungComponent implements OnInit {
               lineColor: 'lightgreen',
               fillColor: 'white'
             }
-          } /*, {
+          } , {
             type: 'pie',
             title: {
               text: 'FK'
@@ -202,7 +191,7 @@ export class ErfolgsmessungComponent implements OnInit {
                   fontSize: '20px'
                 }
               }
-            }*/]
+            }]
         };
       });
     HC_exporting(Highcharts);

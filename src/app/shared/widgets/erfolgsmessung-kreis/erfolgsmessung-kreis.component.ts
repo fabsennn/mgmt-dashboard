@@ -2,10 +2,6 @@ import { Component, OnInit } from '@angular/core';
 import * as Highcharts from 'highcharts';
 import HC_exporting from 'highcharts/modules/exporting';
 import drilldown from 'highcharts/modules/drilldown.js';
-import xrange from 'highcharts/modules/xrange.js';
-import heatmap from 'highcharts/modules/heatmap.js';
-import gantt from 'highcharts/modules/gantt.js';
-import { ganttChart } from 'highcharts';
 import {take} from 'rxjs/operators';
 import {ErfolgsmessungKreisService} from '../erfolgsmessung-kreis/Service/erfolgsmessung-kreis.service';
 
@@ -19,16 +15,10 @@ export class ErfolgsmessungKreisComponent implements OnInit {
   Highcharts = Highcharts;
   chartOptions: any = null;
   drilldown = drilldown(Highcharts);
-  xrange = xrange(Highcharts);
-  heatmap = heatmap(Highcharts);
-  // Gantt = gantt(Highcharts);
   ErfolgsmessungKreisService;
 
   constructor(private erfolgsmessungKreisService: ErfolgsmessungKreisService) { }
 
-  /**
-   * REST-Call für die Daten aus der H2 DB, sowie Übersetzungen und Highcharts-Parameter
-   */
   ngOnInit() {
     this.erfolgsmessungKreisService.getEntwicklung_zielerfuellung()
       .pipe(take(1))
@@ -98,13 +88,19 @@ export class ErfolgsmessungKreisComponent implements OnInit {
               data: [data[72], data[795]],
               pointPadding: 0.42,
               pointPlacement: -0.15,
-              color: Highcharts.getOptions().colors[0]
+              color: Highcharts.getOptions().colors[0],
+              dataLabels: {
+                enabled: true
+              },
 
             }, {
               name: 'PB',
               data: [data[73], data[796]],
               pointPadding: 0.42,
-              color: Highcharts.getOptions().colors[1]
+              color: Highcharts.getOptions().colors[1],
+              dataLabels: {
+                enabled: true
+              },
 
             },
             {
@@ -112,7 +108,10 @@ export class ErfolgsmessungKreisComponent implements OnInit {
               data: [data[74], data[797]],
               pointPadding: 0.42,
               pointPlacement: +0.15,
-              color: Highcharts.getOptions().colors[3]
+              color: Highcharts.getOptions().colors[3],
+              dataLabels: {
+                enabled: true
+              },
 
             }]
         };
